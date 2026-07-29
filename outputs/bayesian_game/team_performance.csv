@@ -1,0 +1,5 @@
+Team,OptimalStrategy,ExpectedPayoff,Rank
+McLaren,HARD_Short,0.8771,1
+Ferrari,MEDIUM_Short,0.8717,2
+Mercedes,MEDIUM_Short,0.8704,3
+Red Bull Racing,HARD_Short,0.8683,4

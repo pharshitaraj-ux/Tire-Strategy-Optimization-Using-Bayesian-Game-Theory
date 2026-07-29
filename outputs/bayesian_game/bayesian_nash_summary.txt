@@ -1,0 +1,25 @@
+BAYESIAN NASH EQUILIBRIUM
+
+Prior Probabilities
+---------------------
+WeatherState
+Dry    0.983514
+Wet    0.016486
+
+Expected Payoffs
+---------------------
+                 HARD_Short  MEDIUM_Short
+Team                                     
+Ferrari              0.8706        0.8717
+McLaren              0.8771        0.8722
+Mercedes             0.8692        0.8704
+Red Bull Racing      0.8683        0.8672
+
+Optimal Strategies
+---------------------
+                OptimalStrategy  ExpectedPayoff
+Team                                           
+Ferrari            MEDIUM_Short          0.8717
+McLaren              HARD_Short          0.8771
+Mercedes           MEDIUM_Short          0.8704
+Red Bull Racing      HARD_Short          0.8683

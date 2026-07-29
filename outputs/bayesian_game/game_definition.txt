@@ -1,0 +1,31 @@
+BAYESIAN GAME FORMULATION
+
+PLAYERS
+['Alpine', 'Aston Martin', 'Ferrari', 'Haas F1 Team', 'Kick Sauber', 'McLaren', 'Mercedes', 'Racing Bulls', 'Red Bull Racing', 'Williams']
+
+TYPES
+['Dry', 'Wet']
+
+STRATEGIES
+['HARD_Long', 'HARD_Medium', 'HARD_Short', 'INTERMEDIATE_Long', 'INTERMEDIATE_Medium', 'INTERMEDIATE_Short', 'MEDIUM_Long', 'MEDIUM_Medium', 'MEDIUM_Short', 'SOFT_Long', 'SOFT_Medium', 'SOFT_Short', 'Unknown_Medium']
+
+PRIOR PROBABILITIES
+WeatherState
+Dry    0.983514
+Wet    0.016486
+
+AVERAGE PAYOFF BY STRATEGY
+Strategy
+SOFT_Short             0.870724
+HARD_Short             0.869256
+MEDIUM_Short           0.867767
+SOFT_Medium            0.843715
+MEDIUM_Medium          0.837699
+HARD_Medium            0.835259
+Unknown_Medium         0.812501
+INTERMEDIATE_Medium    0.783964
+SOFT_Long              0.781869
+MEDIUM_Long            0.779158
+INTERMEDIATE_Short     0.770786
+HARD_Long              0.768449
+INTERMEDIATE_Long      0.739590

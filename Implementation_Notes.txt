@@ -1,0 +1,530 @@
+                                                                GAME THEORY-Tire Strategies Optimization Using Bayesian Game
+
+fastf1 dataset :
+Documentation: FastF1 Documentation:https://docs.fastf1.dev/?utm_source=chatgpt.com
+
+Installation: FastF1 Installation Guide:
+https://docs.fastf1.dev/installation.html?utm_source=chatgpt.com
+
+Dataset variables-
+for i, col in enumerate(df.columns, start=1):
+   print(f"{i}. {col}")
+1. WeatherTime
+2. Driver
+3. DriverNumber
+4. LapTime
+5. LapNumber
+6. Stint
+7. PitOutTime
+8. PitInTime
+9. Sector1Time
+10. Sector2Time
+11. Sector3Time
+12. Sector1SessionTime
+13. Sector2SessionTime
+14. Sector3SessionTime
+15. SpeedI1
+16. SpeedI2
+17. SpeedFL
+18. SpeedST
+19. IsPersonalBest
+20. Compound
+21. TyreLife
+22. FreshTyre
+23. Team
+24. LapStartTime
+25. LapStartDate
+26. TrackStatus
+27. Position
+28. Deleted
+29. DeletedReason
+30. FastF1Generated
+31. IsAccurate
+32. Race
+33. Year
+34. Circuit
+35. Country
+36. AirTemp
+37. TrackTemp
+38. Humidity
+39. Pressure
+40. Rainfall
+41. WindSpeed
+>>> 
+2025-24 grand pixes
+
+#----------------------------
+Key Insights from EDA Part 2
+#----------------------------
+1. Tyre Compound Distribution
+chart shows:
+Hard and Medium tyres are used the most.
+Soft tyres are used less frequently.
+Intermediate tyres are relatively rare.
+Unknown is minimal.
+Interpretation: Teams mainly rely on Hard and Medium compounds because they balance durability and performance over a race distance.
+
+2. Average Lap Time by Compound
+Compound	Average Lap Time (s)
+Soft	89.36
+Hard	89.40
+Medium	89.96
+Unknown	97.38
+Intermediate	106.54
+Interpretation:
+Soft tyres have the fastest average lap time.
+Hard tyres are almost as quick while offering longer life.
+Intermediate tyres are much slower, which is expected because they are designed for wet conditions.
+This is a useful result for your Bayesian Game Theory model, where tyre choice is one of the strategic actions.
+
+3. Tyre Life Distribution
+The histogram indicates:
+Most tyre stints last 5–25 laps.
+Very long stints (above 40 laps) are uncommon.
+Interpretation: Teams usually pit before tyres degrade excessively.
+
+4. Tyre Life vs Lap Time
+The scatter plot suggests:
+Lower tyre life generally corresponds to more consistent lap times.
+As tyre life increases, lap times tend to become more variable and, in many cases, slower.
+Interpretation: This provides evidence of tyre degradation, an important factor in modelling strategy.
+
+5. Team-wise Tyre Usage
+The stacked bar chart shows that all teams use multiple tyre compounds, but the proportions differ.
+Interpretation: Teams adopt different tyre strategies depending on circuit conditions and race situations.
+
+#------------------------------------
+## Key Insights from EDA Part 3
+#------------------------------------
+
+1. Air Temperature Distribution
+The histogram shows:
+* Air temperatures range approximately from 14°C to 32°C.
+* Most races occur between 22°C and 30°C.
+* Multiple peaks are observed because the dataset includes races from different countries and climates.
+Interpretation: Air temperature varies considerably across the Formula 1 season, making it an important environmental factor that can influence tyre performance and race strategy.
+
+2. Track Temperature Distribution
+The histogram shows:
+* Track temperatures range approximately from 17°C to 53°C.
+* Most observations fall between 28°C and 50°C.
+* Track temperatures are generally higher than air temperatures due to direct sunlight and track surface heating.
+Interpretation: Track temperature has a direct effect on tyre grip, degradation, and wear, making it one of the most influential variables in tyre strategy optimization.
+
+3. Humidity Distribution
+The histogram indicates:
+* Humidity values range from approximately 18% to 85%.
+* Most races experience humidity between 55% and 75%.
+* Both dry and humid race conditions are represented in the dataset.
+Interpretation: Humidity varies across circuits and weather conditions, contributing to changes in track conditions and tyre behaviour.
+
+4. Pressure Distribution
+The histogram shows:
+* Most atmospheric pressure values lie between 980 hPa and 1020 hPa.
+* A few lower-pressure observations are present, corresponding to high-altitude circuits.
+Interpretation: Atmospheric pressure remains relatively stable throughout the season and has only a minor influence on lap time compared with temperature and tyre selection.
+
+5. Wind Speed Distribution
+The histogram indicates:
+* Wind speeds mostly range between 0.5 m/s and 3 m/s.
+* Higher wind speeds are relatively uncommon.
+Interpretation: Wind conditions are generally moderate during races and have a comparatively smaller impact on lap performance.
+
+6. Rainfall Distribution
+The bar chart shows:
+* The vast majority of laps were completed under dry conditions.
+* Only a small proportion of laps occurred during rainfall.
+Interpretation: Most Formula 1 races are conducted in dry weather, while wet races are relatively rare but significantly influence tyre strategy decisions.
+
+7. Air Temperature vs Lap Time
+The scatter plot suggests:
+* Lap times are distributed across a wide range of air temperatures.
+* No strong linear relationship exists between air temperature and lap time.
+* Higher lap times are mainly observed during unusual race events such as pit stops, safety cars, or wet conditions.
+Interpretation: Air temperature alone does not determine lap performance but contributes alongside other variables such as tyre compound and track conditions.
+
+8. Track Temperature vs Lap Time
+The scatter plot shows:
+* Lap times remain relatively stable across different track temperatures.
+* Slightly faster lap times are observed at higher track temperatures in many races.
+* The relationship is moderate rather than strongly linear.
+Interpretation: Track temperature influences tyre grip and degradation, affecting lap performance, but its impact depends on other race factors.
+
+9. Lap Time under Rainfall
+The box plot indicates:
+* Lap times during rainy conditions are generally higher than those during dry conditions.
+* Wet races exhibit greater variability in lap times.
+Interpretation: Rainfall significantly reduces racing speed and increases uncertainty, making weather one of the key factors in tyre strategy optimization.
+
+10. Weather Correlation Matrix
+
+The correlation matrix reveals:
+
+| Variables                           | Correlation | Interpretation                                                           |
+| ----------------------------------- | ----------: | ------------------------------------------------------------------------ |
+| Air Temperature ↔ Track Temperature |    **0.74** | Strong positive relationship.                                            |
+| Track Temperature ↔ Humidity        |   **-0.66** | Higher track temperatures are generally associated with lower humidity.  |
+| Air Temperature ↔ Humidity          |   **-0.54** | Moderate negative relationship.                                          |
+| Track Temperature ↔ Lap Time        |   **-0.41** | Higher track temperatures are associated with slightly faster lap times. |
+| Wind Speed ↔ Lap Time               |   **-0.01** | Almost no relationship.                                                  |
+
+Interpretation: Temperature variables exhibit the strongest relationships with lap time, while wind speed has minimal influence. These findings support the inclusion of weather variables in the Bayesian Game Theory model for tyre strategy optimization.
+
+#---------------------------------------------
+EDA Part 4 – Circuit & Race Analysis
+#-----------------------------------------------
+1. Average Lap Time by Circuit
+The bar chart shows:
+* Average lap time differs significantly across circuits.
+* Some circuits consistently produce shorter lap times, while others have much longer average lap times.
+* This variation reflects differences in circuit length, layout, and corner complexity.
+Interpretation: 
+Circuit characteristics strongly influence race pace and should be considered when selecting an optimal tyre strategy.
+
+2. Average Tyre Life by Circuit
+The chart indicates:
+* The average tyre life varies across different circuits.
+* Some circuits allow longer tyre stints, whereas others require earlier pit stops due to increased tyre wear.
+Interpretation:
+Tyre degradation depends on circuit characteristics such as surface abrasiveness and cornering demands, making circuit-specific strategies essential.
+
+3. Tyre Compound Usage by Circuit
+The stacked bar chart shows:
+* Different circuits exhibit different tyre compound usage patterns.
+* Hard compounds are more common at high-degradation circuits.
+* Soft compounds are preferred where higher grip provides a performance advantage.
+Interpretation:Teams adapt tyre selection according to circuit requirements rather than using the same strategy throughout the season.
+
+4. Average Air Temperature by Circuit
+The chart shows:
+* Weather conditions vary considerably between circuits.
+* Some races are held under relatively cool conditions, while others experience much higher temperatures.
+Interpretation:Circuit location influences weather conditions, which in turn affect tyre performance and race strategy.
+
+5. Average Track Temperature by Circuit
+The bar chart indicates:
+* Track temperatures differ substantially across circuits.
+* Certain venues consistently record much higher track temperatures than others.
+Interpretation:Since tyre degradation is strongly affected by track temperature, teams must adapt their tyre strategies to each circuit.
+
+6. Rainfall Occurrence by Circuit
+The analysis shows:
+* Rainfall is concentrated at only a few circuits.
+* Most circuits experience predominantly dry race conditions.
+Interpretation:Wet-weather tyre strategies are only relevant for selected circuits, whereas dry strategies dominate the majority of races.
+
+7. Team Performance Across Circuits
+The analysis indicates:
+* Team performance varies from circuit to circuit.
+* Some teams perform consistently across most tracks, while others show strengths only at specific circuit types.
+Interpretation:Competitive performance depends not only on the car but also on how well a team's strategy matches the circuit characteristics.
+
+##     Overall Conclusion of EDA Part 4  ##
+The circuit-level analysis demonstrates that:
+* Circuit characteristics significantly influence lap time and tyre wear.
+* Weather conditions vary between race locations.
+* Tyre compound selection changes according to circuit demands.
+* Teams employ different strategies depending on circuit characteristics and expected weather.
+
+#------------------------------
+6.Feature Engineering
+#------------------------------
+These engineered features directly support your Bayesian game:
+Players: F1 teams/drivers.
+Types (private information): WeatherState (Dry/Wet).
+Strategies: Strategy (e.g., SOFT_Short, HARD_Long).
+Payoffs: PayoffScore, which combines lap performance and tyre longevity.
+Environmental factors: TemperatureLevel and WeatherProbability.
+Race decisions: PitStop and StintLength.
+This provides the bridge between EDA and the Bayesian Game Theory model. 
+After this, the next implementation step is to formulate the Bayesian game itself:
+ define the players, strategies, types, payoff matrix, and compute the optimal strategy.
+
+### New Features Created
+| Feature            | Purpose                                                            |
+| ------------------ | ------------------------------------------------------------------ |
+| WeatherState       | Represents the weather state (Dry/Wet) for the Bayesian game type. |
+| TemperatureLevel   | Categorises track temperature into Low/Medium/High.                |
+| TyreWear           | Categorises tyre degradation into Low/Medium/High.                 |
+| PitStop            | Indicates whether a pit stop occurred on the lap.                  |
+| StintLength        | Categorises tyre stint as Short/Medium/Long.                       |
+| PaceCategory       | Categorises lap pace as Fast/Normal/Slow.                          |
+| CompoundCode       | Numerical encoding of tyre compounds.                              |
+| Strategy           | Combined strategy label (e.g., `SOFT_Short`).                      |
+| WeatherProbability | Prior probability of each weather state.                           |
+| PayoffScore        | Performance score combining lap time and tyre wear.                |
+
+These features are exactly the kind of inputs a Bayesian game model needs.
+
+
+#-----------------------
+Bayesian Game Formulation
+#------------------------
+models/bayesian_game_model:
+What the output tells us-
+Players: 10 Formula 1 teams identified from the dataset.
+Types: Two weather states (Dry and Wet), which is appropriate for a Bayesian game.
+Strategies: 13 tyre strategy combinations derived from your engineered features.
+Prior probabilities: Approximately 98.35% dry and 1.65% wet conditions, matching the dataset.
+Payoff ranking: Strategies are ranked by the average PayoffScore, with SOFT_Short currently having the highest average payoff.
+
+#----------------------------------
+PAYOFF matrices
+#----------------------------------
+Interpretation:-
+->Dry Weather:
+All four selected strategies are available because these tyre compounds are commonly used in dry conditions.
+From the output:
+| Team            | Best Strategy (highest payoff) |
+| --------------- | ------------------------------ |
+| Red Bull Racing | SOFT_Short (0.8834)            |
+| McLaren         | HARD_Short (0.8785)            |
+| Ferrari         | HARD_Short (0.8713)            |
+| Mercedes        | HARD_Short (0.8702)            |
+This is realistic:
+* Red Bull tends to extract maximum pace from soft tyres.
+* McLaren, Ferrari, and Mercedes obtain slightly better average performance from a short hard-tyre stint in your dataset.
+
+->Wet Weather:
+Only two strategies appear:
+* HARD_Short
+* MEDIUM_Short
+This happened because your filtered dataset contains no observations for `SOFT_Short` or `SOFT_Medium` during wet races.
+That is actually expected:
+* Soft tyres are generally not used in wet conditions.
+* Intermediate or Wet tyres are usually selected instead.
+So the Wet payoff matrix is not incorrect—it simply reflects the available data.
+
+#------------------------------------------
+Bayesian Nash Equilibrium
+#------------------------------------------
+This implementation computes the expected payoff of each strategy 
+using the observed weather probabilities. Under the assumption that each 
+team chooses the strategy that maximises its expected payoff given the uncertainty in weather, the recommended
+strategy for each team represents the Bayesian equilibrium outcome in your simplified model.
+For a project, this is a reasonable and defensible formulation. 
+In a more advanced research setting, one could extend it to model strategic 
+interactions where each team's payoff depends not only on its own strategy but also on the strategies
+chosen by the other teams.
+## Interpretation for your report
+Ferrari:-
+The Bayesian model recommends MEDIUM_Short because it provides the highest expected payoff under uncertain weather conditions.
+McLaren:-
+HARD_Short achieves the greatest expected payoff, indicating that a short hard-tyre stint is the most robust strategy.
+Mercedes:-
+The optimal strategy is MEDIUM_Short, balancing tyre degradation and lap performance.
+Red Bull Racing:-
+The model selects HARD_Short, although the difference between the two candidate strategies is very small, 
+suggesting both are competitive under the observed weather distribution.
+
+
+
+#-----------------------------------------
+Strategy Evalutioon
+#-----------------------------------------
+# 1. game_definition.txt
+This file was generated by:
+```text
+models/bayesian_game_model.py
+```
+##Contents
+* Players
+* Types
+* Strategies
+* Prior probabilities
+* Average payoff by strategy
+### Interpretation
+The Bayesian game formulation defines the strategic decision-making environment for tyre strategy optimization.
+Four Formula 1 teams (Red Bull Racing, McLaren, Ferrari, and Mercedes) are considered as the players.
+The uncertainty in the game is represented by two weather states: Dry and Wet. Each player chooses from a set of 
+tyre strategies, while the prior probabilities indicate that approximately **98.35%** of the race conditions in the 
+2025 dataset were dry and **1.65%** were wet. The average payoff values rank the effectiveness of each strategy, 
+showing that short stints on Soft, Hard, and Medium compounds generally provide higher performance than longer stints. 
+This information forms the basis for constructing the Bayesian game.
+---
+# 2. payoff_matrix_dry.csv
+Generated by:
+```text
+models/payoff_matrix.py
+```
+### Contents
+A payoff matrix for all four teams under Dry weather.
+### Interpretation
+The dry weather payoff matrix represents the expected performance of each selected tyre 
+strategy under normal race conditions. Each value corresponds to the average payoff score obtained from the historical
+dataset for a specific team–strategy combination. Higher payoff values indicate strategies that achieve better lap-time 
+performance while maintaining tyre efficiency. Since dry conditions dominate the dataset, these values have a significant 
+influence on the final Bayesian decision. The matrix demonstrates that strategies such as **HARD_Short**, **MEDIUM_Short**, 
+and **SOFT_Short** consistently produce high performance across the selected teams.
+---
+# 3. payoff_matrix_wet.csv
+Generated by:
+```text
+models/payoff_matrix.py
+```
+### Contents
+Payoff matrix under Wet weather.
+### Interpretation
+The wet weather payoff matrix captures strategy performance during rainy race conditions. 
+Compared to the dry matrix, fewer strategies appear because Soft tyres are rarely used during wet races.
+The available payoff values indicate how each team performs when weather uncertainty shifts towards wet conditions.
+Although wet races account for only a small proportion of the dataset, these payoffs contribute to the expected utility
+calculation through Bayesian probability weighting. This matrix enables the model to account for uncertain weather instead of 
+assuming that all races are dry.
+---
+# 4. expected_payoffs.csv
+Generated by:
+```text
+models/bayesian_nash_equilibrium.py
+```
+### Contents
+Expected payoff for every team and strategy.
+Example:
+
+| Team            | HARD_Short | MEDIUM_Short |
+| --------------- | ---------: | -----------: |
+| Ferrari         |     0.8706 |       0.8717 |
+| McLaren         |     0.8771 |       0.8722 |
+| Mercedes        |     0.8692 |       0.8704 |
+| Red Bull Racing |     0.8683 |       0.8672 |
+
+### Interpretation
+The expected payoff table combines the dry and wet payoff matrices using the Bayesian prior probabilities of weather conditions. 
+Each value represents the expected performance of a tyre strategy when weather uncertainty is considered. 
+Since the dataset is predominantly dry, the dry payoff contributes more strongly to the expected value. 
+However, the inclusion of wet probabilities ensures that the recommendations remain robust under uncertain race conditions. 
+This table serves as the basis for selecting the optimal strategy for each team.
+---
+# 5. optimal_strategy.csv
+Generated by:
+```text
+models/bayesian_nash_equilibrium.py
+```
+### Contents
+
+| Team            | Optimal Strategy | Expected Payoff |
+| --------------- | ---------------- | --------------: |
+| Ferrari         | MEDIUM_Short     |          0.8717 |
+| McLaren         | HARD_Short       |          0.8771 |
+| Mercedes        | MEDIUM_Short     |          0.8704 |
+| Red Bull Racing | HARD_Short       |          0.8683 |
+### Interpretation
+This file presents the optimal tyre strategy for each Formula 1 team after evaluating all candidate strategies using 
+Bayesian expected utility. The strategy with the highest expected payoff is selected as the Bayesian Nash Equilibrium 
+recommendation for that team.
+
+* **Ferrari:** MEDIUM_Short provides the highest expected payoff, indicating the best balance between speed and tyre degradation.
+* **McLaren:** HARD_Short achieves the highest expected payoff, suggesting strong performance and tyre durability under uncertain weather.
+* **Mercedes:** MEDIUM_Short is recommended because it offers the maximum expected utility.
+* **Red Bull Racing:** HARD_Short is selected as the optimal strategy, although the difference between candidate 
+strategies is relatively small, indicating multiple competitive options.
+
+Overall, the results demonstrate that different teams benefit from different tyre strategies depending
+ on their historical performance characteristics.
+---
+# 6. strategy_ranking.csv
+Generated by:
+```text
+models/strategy_evaluation.py
+```
+### Contents
+Teams sorted from the highest expected payoff to the lowest.
+### Interpretation
+The strategy ranking compares the overall effectiveness of the recommended Bayesian strategies across all selected teams. 
+Teams with higher expected payoff values are ranked higher because their recommended strategies achieve superior performance 
+under uncertain weather conditions. In your results, **McLaren** ranks first, indicating that its recommended
+strategy yields the highest expected utility among the four teams. The ranking provides an overall comparison of strategic
+performance rather than determining the race winner.
+---
+# 7. team_performance.csv
+Generated by:
+```text
+models/strategy_evaluation.py
+```
+### Contents
+Team, strategy, expected payoff, and rank.
+### Interpretation
+The team performance table summarises each team's optimal tyre strategy, expected payoff, and final ranking. It provides a concise overview of how the Bayesian Game Theory model evaluates strategic decisions across all players. The ranking highlights the relative effectiveness of each team's recommended strategy and allows straightforward 
+comparison of their expected performance under uncertain weather conditions.
+---
+# Overall Interpretation of Bayesian Game Theory Results
+The Bayesian Game Theory model successfully integrates historical Formula 1 race data with uncertain weather conditions to recommend optimal tyre strategies 
+for competing teams. Unlike deterministic decision-making, the model incorporates prior probabilities of dry and wet 
+weather when computing expected utilities. The resulting Bayesian Nash Equilibrium identifies the strategy that maximises
+each team's expected payoff under uncertainty. The evaluation demonstrates that while all teams benefit from data-driven 
+strategy selection, the optimal tyre choice differs according to each team's historical performance characteristics. 
+These findings illustrate the practical applicability of Bayesian Game Theory for strategic decision-making in Formula 1,
+where uncertainty plays a crucial role in race outcomes.
+
+#--------------------------------------------------------------------------------------
+                   Performance Evaluation
+#-------------------------------------------------------------------------------------
+Interpretation
+1. evaluation_metrics.csv
+This file summarises the statistical performance of the Bayesian Game Theory model.
+Average Expected Payoff: Represents the mean expected utility across all selected teams.
+Maximum Expected Payoff: Indicates the highest utility achieved by any recommended strategy.
+Minimum Expected Payoff: Represents the lowest utility among the selected strategies.
+Standard Deviation: Measures the variation in expected payoffs. A small value indicates that the recommended strategies
+provide consistently similar performance across teams.
+
+2. performance_summary.txt
+This report identifies:
+  The best-performing team according to the Bayesian model.
+  The optimal tyre strategy for that team.
+Summary statistics describing the overall performance of the recommended strategies.
+
+3. payoff_distribution.png
+This bar chart compares the expected payoff achieved by each team's recommended strategy.
+ It allows easy visual comparison of the effectiveness of the Bayesian recommendations.
+
+4. strategy_frequency.png
+This chart shows how often each strategy is recommended across the four teams. It highlights whether a single strategy dominates
+or whether different teams require different strategies under uncertainty.
+
+
+
+#-------------------------------
+Running Commands:
+#------------------------------
+Dataset- python download_f1_data.py
+
+1.Scripts/extract_laps_from_cache.py-
+RUN: python scripts/extract_laps_from_cache.py
+
+2.Extract weather to csv
+RUN:python scripts/extract_weather.py
+
+3.Final dataset:
+RUN-python scripts/create_final_dataset.py
+
+4.Preprocess:
+     python scripts/preprocess_dataset.py
+
+5.EDA
+Part1 : python scripts/eda_part1.py
+Part2 : python scripts/eda_part2.py
+Part3 : python scripts/eda_part3.py
+Part4 : python scripts/eda_part4.py
+
+6.Feature Engineering :
+ scripts/feature_engineering.py
+
+7.Bayesian Game Formulation
+  RUN:
+     python models/bayesian_game_model.py
+8.Payoff matrices-
+ RUN:
+    python models/payoff_matrix.py
+
+9.Bayesian Nash Equilibrium
+RUN:
+   python models/bayesian_nash_equilibrium.py
+
+10.Strategy Evalutioon:
+   RUN:
+   python models/strategy_evaluation.py
+
+11.Performance Evalutioon
+RUN:
+   python models/performance_evaluation.py
