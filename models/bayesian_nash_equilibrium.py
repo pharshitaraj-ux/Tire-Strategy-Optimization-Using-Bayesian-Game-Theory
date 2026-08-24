@@ -1,10 +1,6 @@
 import os
 import pandas as pd
 
-# ---------------------------------------------------
-# Paths
-# ---------------------------------------------------
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DRY = os.path.join(
@@ -142,9 +138,7 @@ with open(summary, "w") as f:
 # Display
 # ---------------------------------------------------
 
-print("\n" + "="*60)
 print("BAYESIAN NASH EQUILIBRIUM COMPUTED")
-print("="*60)
 
 print("\nExpected Payoffs")
 print(expected)

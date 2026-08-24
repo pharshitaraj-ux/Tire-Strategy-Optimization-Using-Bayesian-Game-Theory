@@ -1,0 +1,5 @@
+Team,WetProbability,DryProbability,OptimalStrategy,ExpectedPayoff
+Red Bull Racing,0.0,1.0,HARD_Short,0.8701027451552465
+McLaren,0.0,1.0,HARD_Short,0.8784971040710523
+Ferrari,0.0,1.0,MEDIUM_Short,0.8727769996726873
+Mercedes,0.0,1.0,MEDIUM_Short,0.8711025025604425

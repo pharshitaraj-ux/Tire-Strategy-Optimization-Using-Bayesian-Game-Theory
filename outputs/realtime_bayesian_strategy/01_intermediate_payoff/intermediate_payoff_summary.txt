@@ -1,0 +1,59 @@
+REAL-TIME BAYESIAN STRATEGY
+STEP 1 - INTERMEDIATE PAYOFF EXTENSION
+======================================================================
+
+Selected Teams:
+- Red Bull Racing
+- McLaren
+- Ferrari
+- Mercedes
+
+Modelled Strategies:
+- SOFT_Short
+- MEDIUM_Short
+- HARD_Short
+- INTERMEDIATE_Medium
+
+Weather States:
+- Dry
+- Wet
+
+
+Payoff Data
+======================================================================
+           Team            Strategy WeatherState  AveragePayoff  Observations
+Red Bull Racing          SOFT_Short          Dry       0.883352           198
+Red Bull Racing          SOFT_Short          Wet            NaN             0
+Red Bull Racing        MEDIUM_Short          Dry       0.867226           456
+Red Bull Racing        MEDIUM_Short          Wet       0.867113             4
+Red Bull Racing          HARD_Short          Dry       0.870103           357
+Red Bull Racing          HARD_Short          Wet       0.763621             2
+Red Bull Racing INTERMEDIATE_Medium          Dry       0.764713            46
+Red Bull Racing INTERMEDIATE_Medium          Wet       0.806733            22
+        McLaren          SOFT_Short          Dry       0.873884           128
+        McLaren          SOFT_Short          Wet            NaN             0
+        McLaren        MEDIUM_Short          Dry       0.873048           492
+        McLaren        MEDIUM_Short          Wet       0.823649             4
+        McLaren          HARD_Short          Dry       0.878497           411
+        McLaren          HARD_Short          Wet       0.794191             2
+        McLaren INTERMEDIATE_Medium          Dry       0.786977            55
+        McLaren INTERMEDIATE_Medium          Wet       0.816779            18
+        Ferrari          SOFT_Short          Dry       0.860195           114
+        Ferrari          SOFT_Short          Wet            NaN             0
+        Ferrari        MEDIUM_Short          Dry       0.872777           521
+        Ferrari        MEDIUM_Short          Wet       0.803979             3
+        Ferrari          HARD_Short          Dry       0.871326           412
+        Ferrari          HARD_Short          Wet       0.828759             3
+        Ferrari INTERMEDIATE_Medium          Dry       0.769226            43
+        Ferrari INTERMEDIATE_Medium          Wet       0.810757            21
+       Mercedes          SOFT_Short          Dry       0.858963           145
+       Mercedes          SOFT_Short          Wet            NaN             0
+       Mercedes        MEDIUM_Short          Dry       0.871103           417
+       Mercedes        MEDIUM_Short          Wet       0.830668             3
+       Mercedes          HARD_Short          Dry       0.870153           402
+       Mercedes          HARD_Short          Wet       0.810899             3
+       Mercedes INTERMEDIATE_Medium          Dry       0.788950            36
+       Mercedes INTERMEDIATE_Medium          Wet       0.810764            20
+
+NOTE:
+Payoffs are calculated from observed 2025 F1 data using the existing PayoffScore feature. No synthetic payoff values are introduced.

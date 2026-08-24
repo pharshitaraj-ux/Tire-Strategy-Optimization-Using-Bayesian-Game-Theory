@@ -1,0 +1,49 @@
+FocalTeam,OpponentTeam,OpponentStrategy,BestResponse,ExpectedPayoff,Observations
+Red Bull Racing,McLaren,MEDIUM_Short,MEDIUM_Short,0.8913437030341501,4
+Red Bull Racing,McLaren,SOFT_Short,SOFT_Short,0.8903319570361452,1
+Red Bull Racing,McLaren,HARD_Short,SOFT_Medium,0.8824934583254894,1
+Red Bull Racing,McLaren,SOFT_Medium,SOFT_Medium,0.8428483686380721,2
+Red Bull Racing,Ferrari,SOFT_Short,SOFT_Short,0.8903319570361452,1
+Red Bull Racing,Ferrari,MEDIUM_Short,MEDIUM_Short,0.8762922868290491,4
+Red Bull Racing,Ferrari,HARD_Short,HARD_Short,0.8657834620453383,11
+Red Bull Racing,Ferrari,SOFT_Medium,SOFT_Medium,0.8428483686380721,2
+Red Bull Racing,Mercedes,SOFT_Short,SOFT_Short,0.8903319570361452,1
+Red Bull Racing,Mercedes,MEDIUM_Short,MEDIUM_Short,0.8762922868290491,4
+Red Bull Racing,Mercedes,HARD_Short,HARD_Short,0.8665800557843498,12
+Red Bull Racing,Mercedes,SOFT_Medium,SOFT_Medium,0.8440211491340462,4
+McLaren,Red Bull Racing,MEDIUM_Short,MEDIUM_Short,0.8924802542901648,4
+McLaren,Red Bull Racing,SOFT_Medium,HARD_Short,0.8897986458284622,1
+McLaren,Red Bull Racing,SOFT_Short,SOFT_Short,0.882155240868733,1
+McLaren,Red Bull Racing,HARD_Short,HARD_Short,0.8762048401101742,10
+McLaren,Ferrari,MEDIUM_Short,MEDIUM_Short,0.8826064275904872,4
+McLaren,Ferrari,SOFT_Short,SOFT_Short,0.882155240868733,1
+McLaren,Ferrari,HARD_Short,HARD_Short,0.8622281125589916,11
+McLaren,Ferrari,SOFT_Medium,SOFT_Medium,0.8393199111028942,2
+McLaren,Mercedes,MEDIUM_Short,MEDIUM_Short,0.9033753219007744,3
+McLaren,Mercedes,SOFT_Medium,HARD_Short,0.8897986458284622,1
+McLaren,Mercedes,SOFT_Short,SOFT_Short,0.882155240868733,1
+McLaren,Mercedes,HARD_Short,HARD_Short,0.8635926801141363,12
+Ferrari,Red Bull Racing,SOFT_Short,SOFT_Short,0.8844424054504523,1
+Ferrari,Red Bull Racing,HARD_Short,MEDIUM_Short,0.8742138461336582,1
+Ferrari,Red Bull Racing,SOFT_Medium,MEDIUM_Short,0.8724370777872039,2
+Ferrari,Red Bull Racing,MEDIUM_Short,MEDIUM_Short,0.8706421463127616,4
+Ferrari,McLaren,SOFT_Short,SOFT_Short,0.8844424054504523,1
+Ferrari,McLaren,MEDIUM_Short,MEDIUM_Short,0.8816158591802177,4
+Ferrari,McLaren,HARD_Short,HARD_Short,0.8588670188218323,11
+Ferrari,McLaren,SOFT_Medium,SOFT_Medium,0.8391136596791721,2
+Ferrari,Mercedes,SOFT_Short,SOFT_Short,0.8844424054504523,1
+Ferrari,Mercedes,HARD_Short,MEDIUM_Short,0.8742138461336582,1
+Ferrari,Mercedes,SOFT_Medium,MEDIUM_Short,0.8724370777872039,2
+Ferrari,Mercedes,MEDIUM_Short,MEDIUM_Short,0.8706421463127616,4
+Mercedes,Red Bull Racing,SOFT_Short,SOFT_Short,0.8854883353436878,1
+Mercedes,Red Bull Racing,MEDIUM_Short,MEDIUM_Short,0.8724546450738646,4
+Mercedes,Red Bull Racing,HARD_Short,HARD_Short,0.8709628564604331,12
+Mercedes,Red Bull Racing,SOFT_Medium,SOFT_Medium,0.8400314522145513,4
+Mercedes,McLaren,MEDIUM_Short,MEDIUM_Short,0.9024492352543332,3
+Mercedes,McLaren,SOFT_Short,SOFT_Short,0.8854883353436878,1
+Mercedes,McLaren,HARD_Short,SOFT_Medium,0.8802412511952749,1
+Mercedes,McLaren,SOFT_Medium,SOFT_Medium,0.8360180543354967,2
+Mercedes,Ferrari,SOFT_Short,SOFT_Short,0.8854883353436878,1
+Mercedes,Ferrari,MEDIUM_Short,HARD_Short,0.873168247753911,1
+Mercedes,Ferrari,HARD_Short,HARD_Short,0.8606786134397644,13
+Mercedes,Ferrari,SOFT_Medium,SOFT_Medium,0.8360180543354967,2

@@ -1,0 +1,17 @@
+FocalTeam,BestResponseStrategy,NumberOfOpponentConditions
+Red Bull Racing,SOFT_Medium,4
+Red Bull Racing,MEDIUM_Short,3
+Red Bull Racing,SOFT_Short,3
+Red Bull Racing,HARD_Short,2
+McLaren,HARD_Short,5
+McLaren,MEDIUM_Short,3
+McLaren,SOFT_Short,3
+McLaren,SOFT_Medium,1
+Ferrari,MEDIUM_Short,7
+Ferrari,SOFT_Short,3
+Ferrari,HARD_Short,1
+Ferrari,SOFT_Medium,1
+Mercedes,SOFT_Medium,4
+Mercedes,SOFT_Short,3
+Mercedes,HARD_Short,3
+Mercedes,MEDIUM_Short,2

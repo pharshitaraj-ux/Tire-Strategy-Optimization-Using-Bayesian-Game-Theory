@@ -1,0 +1,24 @@
+REAL-TIME BAYESIAN STRATEGY
+STEP 5 - INTERACTIVE REAL-TIME STRATEGY INPUT
+======================================================================
+
+Team A: McLaren
+Opponent Team: Mercedes
+Wet Probability: 0.050000
+Dry Probability: 0.950000
+
+TEAM A RECOMMENDATION
+----------------------------------------------------------------------
+Strategy: HARD_Short
+Expected Payoff: 0.874282
+
+OPPONENT RECOMMENDATION
+----------------------------------------------------------------------
+Strategy: MEDIUM_Short
+Expected Payoff: 0.869081
+
+Expected Payoff Equation:
+EU(s) = P(Dry)*U(s,Dry) + P(Wet)*U(s,Wet)
+
+NOTE:
+The system uses observed historical 2025 payoff values. Missing weather-strategy combinations are not assigned synthetic payoff values.

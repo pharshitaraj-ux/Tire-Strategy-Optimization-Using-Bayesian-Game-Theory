@@ -1,0 +1,289 @@
+Race,WeatherState,FocalTeam,FocalStrategy,OpponentTeam,OpponentStrategy,FocalPayoff,FocalLapTime
+Abu Dhabi Grand Prix,Dry,Red Bull Racing,HARD_Short,McLaren,HARD_Short,0.8753425869134744,90.67580000000001
+Abu Dhabi Grand Prix,Dry,Red Bull Racing,HARD_Short,Ferrari,MEDIUM_Short,0.8753425869134744,90.67580000000001
+Abu Dhabi Grand Prix,Dry,Red Bull Racing,HARD_Short,Mercedes,HARD_Short,0.8753425869134744,90.67580000000001
+Abu Dhabi Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,HARD_Short,0.878602923220728,89.97363999999999
+Abu Dhabi Grand Prix,Dry,McLaren,HARD_Short,Ferrari,MEDIUM_Short,0.878602923220728,89.97363999999999
+Abu Dhabi Grand Prix,Dry,McLaren,HARD_Short,Mercedes,HARD_Short,0.878602923220728,89.97363999999999
+Abu Dhabi Grand Prix,Dry,Ferrari,MEDIUM_Short,Red Bull Racing,HARD_Short,0.8742138461336582,90.87752727272728
+Abu Dhabi Grand Prix,Dry,Ferrari,MEDIUM_Short,McLaren,HARD_Short,0.8742138461336582,90.87752727272728
+Abu Dhabi Grand Prix,Dry,Ferrari,MEDIUM_Short,Mercedes,HARD_Short,0.8742138461336582,90.87752727272728
+Abu Dhabi Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,HARD_Short,0.873168247753911,91.144075
+Abu Dhabi Grand Prix,Dry,Mercedes,HARD_Short,McLaren,HARD_Short,0.873168247753911,91.144075
+Abu Dhabi Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,MEDIUM_Short,0.873168247753911,91.144075
+Australian Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,McLaren,HARD_Short,0.7885364113305751,109.37075
+Australian Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Ferrari,HARD_Short,0.7885364113305751,109.37075
+Australian Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Mercedes,HARD_Short,0.7885364113305751,109.37075
+Australian Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,MEDIUM_Short,0.7493463764985929,117.35588888888888
+Australian Grand Prix,Dry,McLaren,HARD_Short,Ferrari,HARD_Short,0.7493463764985929,117.35588888888888
+Australian Grand Prix,Dry,McLaren,HARD_Short,Mercedes,HARD_Short,0.7493463764985929,117.35588888888888
+Australian Grand Prix,Dry,Ferrari,HARD_Short,Red Bull Racing,MEDIUM_Short,0.7323139950408193,121.02405555555555
+Australian Grand Prix,Dry,Ferrari,HARD_Short,McLaren,HARD_Short,0.7323139950408193,121.02405555555555
+Australian Grand Prix,Dry,Ferrari,HARD_Short,Mercedes,HARD_Short,0.7323139950408193,121.02405555555555
+Australian Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,MEDIUM_Short,0.7605682179041546,115.39410000000001
+Australian Grand Prix,Dry,Mercedes,HARD_Short,McLaren,HARD_Short,0.7605682179041546,115.39410000000001
+Australian Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,HARD_Short,0.7605682179041546,115.39410000000001
+Austrian Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,McLaren,MEDIUM_Short,0.9444865030436247,76.07633333333332
+Austrian Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Ferrari,MEDIUM_Short,0.9444865030436247,76.07633333333332
+Austrian Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Mercedes,MEDIUM_Short,0.9444865030436247,76.07633333333332
+Austrian Grand Prix,Dry,McLaren,MEDIUM_Short,Red Bull Racing,MEDIUM_Short,0.9525738230250462,74.04295
+Austrian Grand Prix,Dry,McLaren,MEDIUM_Short,Ferrari,MEDIUM_Short,0.9525738230250462,74.04295
+Austrian Grand Prix,Dry,McLaren,MEDIUM_Short,Mercedes,MEDIUM_Short,0.9525738230250462,74.04295
+Austrian Grand Prix,Dry,Ferrari,MEDIUM_Short,Red Bull Racing,MEDIUM_Short,0.9502536456953833,74.54263333333333
+Austrian Grand Prix,Dry,Ferrari,MEDIUM_Short,McLaren,MEDIUM_Short,0.9502536456953833,74.54263333333333
+Austrian Grand Prix,Dry,Ferrari,MEDIUM_Short,Mercedes,MEDIUM_Short,0.9502536456953833,74.54263333333333
+Austrian Grand Prix,Dry,Mercedes,MEDIUM_Short,Red Bull Racing,MEDIUM_Short,0.9452256439799729,75.7575806451613
+Austrian Grand Prix,Dry,Mercedes,MEDIUM_Short,McLaren,MEDIUM_Short,0.9452256439799729,75.7575806451613
+Austrian Grand Prix,Dry,Mercedes,MEDIUM_Short,Ferrari,MEDIUM_Short,0.9452256439799729,75.7575806451613
+Azerbaijan Grand Prix,Dry,Red Bull Racing,HARD_Short,McLaren,MEDIUM_Short,0.8022288303800449,105.6939
+Azerbaijan Grand Prix,Dry,Red Bull Racing,HARD_Short,Ferrari,HARD_Short,0.8022288303800449,105.6939
+Azerbaijan Grand Prix,Dry,Red Bull Racing,HARD_Short,Mercedes,HARD_Short,0.8022288303800449,105.6939
+Azerbaijan Grand Prix,Dry,McLaren,MEDIUM_Short,Red Bull Racing,HARD_Short,0.807447161604943,105.49304761904762
+Azerbaijan Grand Prix,Dry,McLaren,MEDIUM_Short,Ferrari,HARD_Short,0.807447161604943,105.49304761904762
+Azerbaijan Grand Prix,Dry,McLaren,MEDIUM_Short,Mercedes,HARD_Short,0.807447161604943,105.49304761904762
+Azerbaijan Grand Prix,Dry,Ferrari,HARD_Short,Red Bull Racing,HARD_Short,0.8012285274889135,106.37908108108108
+Azerbaijan Grand Prix,Dry,Ferrari,HARD_Short,McLaren,MEDIUM_Short,0.8012285274889135,106.37908108108108
+Azerbaijan Grand Prix,Dry,Ferrari,HARD_Short,Mercedes,HARD_Short,0.8012285274889135,106.37908108108108
+Azerbaijan Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,HARD_Short,0.8013724006521876,105.83755172413794
+Azerbaijan Grand Prix,Dry,Mercedes,HARD_Short,McLaren,MEDIUM_Short,0.8013724006521876,105.83755172413794
+Azerbaijan Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,HARD_Short,0.8013724006521876,105.83755172413794
+Bahrain Grand Prix,Dry,Red Bull Racing,SOFT_Medium,McLaren,MEDIUM_Short,0.8078944009345513,101.87964383561643
+Bahrain Grand Prix,Dry,Red Bull Racing,SOFT_Medium,Ferrari,MEDIUM_Short,0.8078944009345513,101.87964383561643
+Bahrain Grand Prix,Dry,Red Bull Racing,SOFT_Medium,Mercedes,SOFT_Medium,0.8078944009345513,101.87964383561643
+Bahrain Grand Prix,Dry,McLaren,MEDIUM_Short,Red Bull Racing,SOFT_Medium,0.8202997446596263,101.108203125
+Bahrain Grand Prix,Dry,McLaren,MEDIUM_Short,Ferrari,MEDIUM_Short,0.8202997446596263,101.108203125
+Bahrain Grand Prix,Dry,McLaren,MEDIUM_Short,Mercedes,SOFT_Medium,0.8202997446596263,101.108203125
+Bahrain Grand Prix,Dry,Ferrari,MEDIUM_Short,Red Bull Racing,SOFT_Medium,0.8263898711384311,101.21846666666667
+Bahrain Grand Prix,Dry,Ferrari,MEDIUM_Short,McLaren,MEDIUM_Short,0.8263898711384311,101.21846666666667
+Bahrain Grand Prix,Dry,Ferrari,MEDIUM_Short,Mercedes,SOFT_Medium,0.8263898711384311,101.21846666666667
+Bahrain Grand Prix,Dry,Mercedes,SOFT_Medium,Red Bull Racing,SOFT_Medium,0.8078484489919368,100.32285106382979
+Bahrain Grand Prix,Dry,Mercedes,SOFT_Medium,McLaren,MEDIUM_Short,0.8078484489919368,100.32285106382979
+Bahrain Grand Prix,Dry,Mercedes,SOFT_Medium,Ferrari,MEDIUM_Short,0.8078484489919368,100.32285106382979
+Belgian Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,McLaren,HARD_Short,0.7819828641845434,110.78215
+Belgian Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Ferrari,MEDIUM_Short,0.7819828641845434,110.78215
+Belgian Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Mercedes,MEDIUM_Short,0.7819828641845434,110.78215
+Belgian Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,MEDIUM_Short,0.787321957415282,109.63230000000001
+Belgian Grand Prix,Dry,McLaren,HARD_Short,Ferrari,MEDIUM_Short,0.787321957415282,109.63230000000001
+Belgian Grand Prix,Dry,McLaren,HARD_Short,Mercedes,MEDIUM_Short,0.787321957415282,109.63230000000001
+Belgian Grand Prix,Dry,Ferrari,MEDIUM_Short,Red Bull Racing,MEDIUM_Short,0.7824950196686069,110.67184999999999
+Belgian Grand Prix,Dry,Ferrari,MEDIUM_Short,McLaren,HARD_Short,0.7824950196686069,110.67184999999999
+Belgian Grand Prix,Dry,Ferrari,MEDIUM_Short,Mercedes,MEDIUM_Short,0.7824950196686069,110.67184999999999
+Belgian Grand Prix,Dry,Mercedes,MEDIUM_Short,Red Bull Racing,MEDIUM_Short,0.7824708745324589,110.67705000000001
+Belgian Grand Prix,Dry,Mercedes,MEDIUM_Short,McLaren,HARD_Short,0.7824708745324589,110.67705000000001
+Belgian Grand Prix,Dry,Mercedes,MEDIUM_Short,Ferrari,MEDIUM_Short,0.7824708745324589,110.67705000000001
+British Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,McLaren,MEDIUM_Short,0.8421885290049473,97.816
+British Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Ferrari,SOFT_Short,0.8421885290049473,97.816
+British Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Mercedes,HARD_Short,0.8421885290049473,97.816
+British Grand Prix,Dry,McLaren,MEDIUM_Short,Red Bull Racing,MEDIUM_Short,0.8597950514583362,94.69329411764706
+British Grand Prix,Dry,McLaren,MEDIUM_Short,Ferrari,SOFT_Short,0.8597950514583362,94.69329411764706
+British Grand Prix,Dry,McLaren,MEDIUM_Short,Mercedes,HARD_Short,0.8597950514583362,94.69329411764706
+British Grand Prix,Dry,Ferrari,SOFT_Short,Red Bull Racing,MEDIUM_Short,0.8046258701714771,103.89487096774194
+British Grand Prix,Dry,Ferrari,SOFT_Short,McLaren,MEDIUM_Short,0.8046258701714771,103.89487096774194
+British Grand Prix,Dry,Ferrari,SOFT_Short,Mercedes,HARD_Short,0.8046258701714771,103.89487096774194
+British Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,MEDIUM_Short,0.7857767709172819,110.31896296296297
+British Grand Prix,Dry,Mercedes,HARD_Short,McLaren,MEDIUM_Short,0.7857767709172819,110.31896296296297
+British Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,SOFT_Short,0.7857767709172819,110.31896296296297
+Canadian Grand Prix,Dry,Red Bull Racing,HARD_Short,McLaren,HARD_Short,0.9346427751071777,77.70136170212766
+Canadian Grand Prix,Dry,Red Bull Racing,HARD_Short,Ferrari,HARD_Short,0.9346427751071777,77.70136170212766
+Canadian Grand Prix,Dry,Red Bull Racing,HARD_Short,Mercedes,HARD_Short,0.9346427751071777,77.70136170212766
+Canadian Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,HARD_Short,0.9328241065910571,78.318
+Canadian Grand Prix,Dry,McLaren,HARD_Short,Ferrari,HARD_Short,0.9328241065910571,78.318
+Canadian Grand Prix,Dry,McLaren,HARD_Short,Mercedes,HARD_Short,0.9328241065910571,78.318
+Canadian Grand Prix,Dry,Ferrari,HARD_Short,Red Bull Racing,HARD_Short,0.940444065029181,76.65526666666666
+Canadian Grand Prix,Dry,Ferrari,HARD_Short,McLaren,HARD_Short,0.940444065029181,76.65526666666666
+Canadian Grand Prix,Dry,Ferrari,HARD_Short,Mercedes,HARD_Short,0.940444065029181,76.65526666666666
+Canadian Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,HARD_Short,0.9392023515174827,76.33769387755102
+Canadian Grand Prix,Dry,Mercedes,HARD_Short,McLaren,HARD_Short,0.9392023515174827,76.33769387755102
+Canadian Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,HARD_Short,0.9392023515174827,76.33769387755102
+Chinese Grand Prix,Dry,Red Bull Racing,HARD_Short,McLaren,HARD_Short,0.8348610373794624,99.39407999999999
+Chinese Grand Prix,Dry,Red Bull Racing,HARD_Short,Ferrari,HARD_Short,0.8348610373794624,99.39407999999999
+Chinese Grand Prix,Dry,Red Bull Racing,HARD_Short,Mercedes,HARD_Short,0.8348610373794624,99.39407999999999
+Chinese Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,HARD_Short,0.8381408523109737,98.687725
+Chinese Grand Prix,Dry,McLaren,HARD_Short,Ferrari,HARD_Short,0.8381408523109737,98.687725
+Chinese Grand Prix,Dry,McLaren,HARD_Short,Mercedes,HARD_Short,0.8381408523109737,98.687725
+Chinese Grand Prix,Dry,Ferrari,HARD_Short,Red Bull Racing,HARD_Short,0.8384088865386942,98.63
+Chinese Grand Prix,Dry,Ferrari,HARD_Short,McLaren,HARD_Short,0.8384088865386942,98.63
+Chinese Grand Prix,Dry,Ferrari,HARD_Short,Mercedes,HARD_Short,0.8384088865386942,98.63
+Chinese Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,HARD_Short,0.8347315126539142,99.421975
+Chinese Grand Prix,Dry,Mercedes,HARD_Short,McLaren,HARD_Short,0.8347315126539142,99.421975
+Chinese Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,HARD_Short,0.8347315126539142,99.421975
+Dutch Grand Prix,Dry,Red Bull Racing,SOFT_Medium,McLaren,HARD_Short,0.8824934583254894,84.40381
+Dutch Grand Prix,Dry,Red Bull Racing,SOFT_Medium,Ferrari,MEDIUM_Short,0.8824934583254894,84.40381
+Dutch Grand Prix,Dry,Red Bull Racing,SOFT_Medium,Mercedes,SOFT_Medium,0.8824934583254894,84.40381
+Dutch Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,SOFT_Medium,0.8897986458284622,87.42127586206897
+Dutch Grand Prix,Dry,McLaren,HARD_Short,Ferrari,MEDIUM_Short,0.8897986458284622,87.42127586206897
+Dutch Grand Prix,Dry,McLaren,HARD_Short,Mercedes,SOFT_Medium,0.8897986458284622,87.42127586206897
+Dutch Grand Prix,Dry,Ferrari,MEDIUM_Short,Red Bull Racing,SOFT_Medium,0.9184842844359768,81.24341379310346
+Dutch Grand Prix,Dry,Ferrari,MEDIUM_Short,McLaren,HARD_Short,0.9184842844359768,81.24341379310346
+Dutch Grand Prix,Dry,Ferrari,MEDIUM_Short,Mercedes,SOFT_Medium,0.9184842844359768,81.24341379310346
+Dutch Grand Prix,Dry,Mercedes,SOFT_Medium,Red Bull Racing,SOFT_Medium,0.8802412511952749,86.4699625
+Dutch Grand Prix,Dry,Mercedes,SOFT_Medium,McLaren,HARD_Short,0.8802412511952749,86.4699625
+Dutch Grand Prix,Dry,Mercedes,SOFT_Medium,Ferrari,MEDIUM_Short,0.8802412511952749,86.4699625
+Emilia Romagna Grand Prix,Dry,Red Bull Racing,HARD_Short,McLaren,HARD_Short,0.8769647685989906,90.32644
+Emilia Romagna Grand Prix,Dry,Red Bull Racing,HARD_Short,Ferrari,HARD_Short,0.8769647685989906,90.32644
+Emilia Romagna Grand Prix,Dry,Red Bull Racing,HARD_Short,Mercedes,HARD_Short,0.8769647685989906,90.32644
+Emilia Romagna Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,HARD_Short,0.8854546805270478,88.42861016949153
+Emilia Romagna Grand Prix,Dry,McLaren,HARD_Short,Ferrari,HARD_Short,0.8854546805270478,88.42861016949153
+Emilia Romagna Grand Prix,Dry,McLaren,HARD_Short,Mercedes,HARD_Short,0.8854546805270478,88.42861016949153
+Emilia Romagna Grand Prix,Dry,Ferrari,HARD_Short,Red Bull Racing,HARD_Short,0.8865090158876379,88.27095
+Emilia Romagna Grand Prix,Dry,Ferrari,HARD_Short,McLaren,HARD_Short,0.8865090158876379,88.27095
+Emilia Romagna Grand Prix,Dry,Ferrari,HARD_Short,Mercedes,HARD_Short,0.8865090158876379,88.27095
+Emilia Romagna Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,HARD_Short,0.9032607172805083,84.45993617021277
+Emilia Romagna Grand Prix,Dry,Mercedes,HARD_Short,McLaren,HARD_Short,0.9032607172805083,84.45993617021277
+Emilia Romagna Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,HARD_Short,0.9032607172805083,84.45993617021277
+Hungarian Grand Prix,Dry,Red Bull Racing,HARD_Short,McLaren,HARD_Short,0.902838740751503,83.94598507462688
+Hungarian Grand Prix,Dry,Red Bull Racing,HARD_Short,Ferrari,HARD_Short,0.902838740751503,83.94598507462688
+Hungarian Grand Prix,Dry,Red Bull Racing,HARD_Short,Mercedes,HARD_Short,0.902838740751503,83.94598507462688
+Hungarian Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,HARD_Short,0.9113529380599651,82.74983333333334
+Hungarian Grand Prix,Dry,McLaren,HARD_Short,Ferrari,HARD_Short,0.9113529380599651,82.74983333333334
+Hungarian Grand Prix,Dry,McLaren,HARD_Short,Mercedes,HARD_Short,0.9113529380599651,82.74983333333334
+Hungarian Grand Prix,Dry,Ferrari,HARD_Short,Red Bull Racing,HARD_Short,0.909984449538263,83.21518
+Hungarian Grand Prix,Dry,Ferrari,HARD_Short,McLaren,HARD_Short,0.909984449538263,83.21518
+Hungarian Grand Prix,Dry,Ferrari,HARD_Short,Mercedes,HARD_Short,0.909984449538263,83.21518
+Hungarian Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,HARD_Short,0.9084048004387307,83.55538
+Hungarian Grand Prix,Dry,Mercedes,HARD_Short,McLaren,HARD_Short,0.9084048004387307,83.55538
+Hungarian Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,HARD_Short,0.9084048004387307,83.55538
+Italian Grand Prix,Dry,Red Bull Racing,HARD_Short,McLaren,MEDIUM_Short,0.9025057489976508,84.825825
+Italian Grand Prix,Dry,Red Bull Racing,HARD_Short,Ferrari,HARD_Short,0.9025057489976508,84.825825
+Italian Grand Prix,Dry,Red Bull Racing,HARD_Short,Mercedes,HARD_Short,0.9025057489976508,84.825825
+Italian Grand Prix,Dry,McLaren,MEDIUM_Short,Red Bull Racing,HARD_Short,0.9021788704433159,84.38922857142857
+Italian Grand Prix,Dry,McLaren,MEDIUM_Short,Ferrari,HARD_Short,0.9021788704433159,84.38922857142857
+Italian Grand Prix,Dry,McLaren,MEDIUM_Short,Mercedes,HARD_Short,0.9021788704433159,84.38922857142857
+Italian Grand Prix,Dry,Ferrari,HARD_Short,Red Bull Racing,HARD_Short,0.9037778958584515,84.55185
+Italian Grand Prix,Dry,Ferrari,HARD_Short,McLaren,MEDIUM_Short,0.9037778958584515,84.55185
+Italian Grand Prix,Dry,Ferrari,HARD_Short,Mercedes,HARD_Short,0.9037778958584515,84.55185
+Italian Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,HARD_Short,0.901619227820907,85.01675
+Italian Grand Prix,Dry,Mercedes,HARD_Short,McLaren,MEDIUM_Short,0.901619227820907,85.01675
+Italian Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,HARD_Short,0.901619227820907,85.01675
+Japanese Grand Prix,Dry,Red Bull Racing,HARD_Short,McLaren,HARD_Short,0.856213254553022,94.795575
+Japanese Grand Prix,Dry,Red Bull Racing,HARD_Short,Ferrari,HARD_Short,0.856213254553022,94.795575
+Japanese Grand Prix,Dry,Red Bull Racing,HARD_Short,Mercedes,HARD_Short,0.856213254553022,94.795575
+Japanese Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,HARD_Short,0.8584365804791936,94.31675
+Japanese Grand Prix,Dry,McLaren,HARD_Short,Ferrari,HARD_Short,0.8584365804791936,94.31675
+Japanese Grand Prix,Dry,McLaren,HARD_Short,Mercedes,HARD_Short,0.8584365804791936,94.31675
+Japanese Grand Prix,Dry,Ferrari,HARD_Short,Red Bull Racing,HARD_Short,0.8580001107103634,94.41075
+Japanese Grand Prix,Dry,Ferrari,HARD_Short,McLaren,HARD_Short,0.8580001107103634,94.41075
+Japanese Grand Prix,Dry,Ferrari,HARD_Short,Mercedes,HARD_Short,0.8580001107103634,94.41075
+Japanese Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,HARD_Short,0.8576698563241075,94.481875
+Japanese Grand Prix,Dry,Mercedes,HARD_Short,McLaren,HARD_Short,0.8576698563241075,94.481875
+Japanese Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,HARD_Short,0.8576698563241075,94.481875
+Las Vegas Grand Prix,Dry,Red Bull Racing,HARD_Short,McLaren,HARD_Short,0.8287327232273611,100.7139
+Las Vegas Grand Prix,Dry,Red Bull Racing,HARD_Short,Ferrari,HARD_Short,0.8287327232273611,100.7139
+Las Vegas Grand Prix,Dry,Red Bull Racing,HARD_Short,Mercedes,HARD_Short,0.8287327232273611,100.7139
+Las Vegas Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,HARD_Short,0.8317291578398119,100.068575
+Las Vegas Grand Prix,Dry,McLaren,HARD_Short,Ferrari,HARD_Short,0.8317291578398119,100.068575
+Las Vegas Grand Prix,Dry,McLaren,HARD_Short,Mercedes,HARD_Short,0.8317291578398119,100.068575
+Las Vegas Grand Prix,Dry,Ferrari,HARD_Short,Red Bull Racing,HARD_Short,0.8293816237613403,100.57415
+Las Vegas Grand Prix,Dry,Ferrari,HARD_Short,McLaren,HARD_Short,0.8293816237613403,100.57415
+Las Vegas Grand Prix,Dry,Ferrari,HARD_Short,Mercedes,HARD_Short,0.8293816237613403,100.57415
+Las Vegas Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,HARD_Short,0.8264682053966864,101.42909374999999
+Las Vegas Grand Prix,Dry,Mercedes,HARD_Short,McLaren,HARD_Short,0.8264682053966864,101.42909374999999
+Las Vegas Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,HARD_Short,0.8264682053966864,101.42909374999999
+Mexico City Grand Prix,Dry,Red Bull Racing,SOFT_Medium,McLaren,SOFT_Medium,0.8859268386957952,83.16049253731343
+Mexico City Grand Prix,Dry,Red Bull Racing,SOFT_Medium,Ferrari,SOFT_Medium,0.8859268386957952,83.16049253731343
+Mexico City Grand Prix,Dry,Red Bull Racing,SOFT_Medium,Mercedes,SOFT_Medium,0.8859268386957952,83.16049253731343
+Mexico City Grand Prix,Dry,McLaren,SOFT_Medium,Red Bull Racing,SOFT_Medium,0.8834054382885145,82.97329213483145
+Mexico City Grand Prix,Dry,McLaren,SOFT_Medium,Ferrari,SOFT_Medium,0.8834054382885145,82.97329213483145
+Mexico City Grand Prix,Dry,McLaren,SOFT_Medium,Mercedes,SOFT_Medium,0.8834054382885145,82.97329213483145
+Mexico City Grand Prix,Dry,Ferrari,SOFT_Medium,Red Bull Racing,SOFT_Medium,0.8819214097713765,83.2928988764045
+Mexico City Grand Prix,Dry,Ferrari,SOFT_Medium,McLaren,SOFT_Medium,0.8819214097713765,83.2928988764045
+Mexico City Grand Prix,Dry,Ferrari,SOFT_Medium,Mercedes,SOFT_Medium,0.8819214097713765,83.2928988764045
+Mexico City Grand Prix,Dry,Mercedes,SOFT_Medium,Red Bull Racing,SOFT_Medium,0.8780251806647283,83.42480555555557
+Mexico City Grand Prix,Dry,Mercedes,SOFT_Medium,McLaren,SOFT_Medium,0.8780251806647283,83.42480555555557
+Mexico City Grand Prix,Dry,Mercedes,SOFT_Medium,Ferrari,SOFT_Medium,0.8780251806647283,83.42480555555557
+Miami Grand Prix,Dry,Red Bull Racing,HARD_Short,McLaren,HARD_Short,0.8514251836439946,96.23119444444444
+Miami Grand Prix,Dry,Red Bull Racing,HARD_Short,Ferrari,HARD_Short,0.8514251836439946,96.23119444444444
+Miami Grand Prix,Dry,Red Bull Racing,HARD_Short,Mercedes,HARD_Short,0.8514251836439946,96.23119444444444
+Miami Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,HARD_Short,0.8576190817641969,94.89725
+Miami Grand Prix,Dry,McLaren,HARD_Short,Ferrari,HARD_Short,0.8576190817641969,94.89725
+Miami Grand Prix,Dry,McLaren,HARD_Short,Mercedes,HARD_Short,0.8576190817641969,94.89725
+Miami Grand Prix,Dry,Ferrari,HARD_Short,Red Bull Racing,HARD_Short,0.8522022190124199,95.96683783783784
+Miami Grand Prix,Dry,Ferrari,HARD_Short,McLaren,HARD_Short,0.8522022190124199,95.96683783783784
+Miami Grand Prix,Dry,Ferrari,HARD_Short,Mercedes,HARD_Short,0.8522022190124199,95.96683783783784
+Miami Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,HARD_Short,0.8523008317706459,96.04261111111111
+Miami Grand Prix,Dry,Mercedes,HARD_Short,McLaren,HARD_Short,0.8523008317706459,96.04261111111111
+Miami Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,HARD_Short,0.8523008317706459,96.04261111111111
+Monaco Grand Prix,Dry,Red Bull Racing,HARD_Short,McLaren,HARD_Short,0.9101183268894653,83.61534285714285
+Monaco Grand Prix,Dry,Red Bull Racing,HARD_Short,Ferrari,HARD_Short,0.9101183268894653,83.61534285714285
+Monaco Grand Prix,Dry,Red Bull Racing,HARD_Short,Mercedes,HARD_Short,0.9101183268894653,83.61534285714285
+Monaco Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,HARD_Short,0.927308569246841,79.48418333333333
+Monaco Grand Prix,Dry,McLaren,HARD_Short,Ferrari,HARD_Short,0.927308569246841,79.48418333333333
+Monaco Grand Prix,Dry,McLaren,HARD_Short,Mercedes,HARD_Short,0.927308569246841,79.48418333333333
+Monaco Grand Prix,Dry,Ferrari,HARD_Short,Red Bull Racing,HARD_Short,0.920818028396058,80.44418867924529
+Monaco Grand Prix,Dry,Ferrari,HARD_Short,McLaren,HARD_Short,0.920818028396058,80.44418867924529
+Monaco Grand Prix,Dry,Ferrari,HARD_Short,Mercedes,HARD_Short,0.920818028396058,80.44418867924529
+Monaco Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,HARD_Short,0.9133581876046774,83.06768181818182
+Monaco Grand Prix,Dry,Mercedes,HARD_Short,McLaren,HARD_Short,0.9133581876046774,83.06768181818182
+Monaco Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,HARD_Short,0.9133581876046774,83.06768181818182
+Qatar Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,McLaren,MEDIUM_Short,0.8612208628152229,94.071
+Qatar Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Ferrari,MEDIUM_Short,0.8612208628152229,94.071
+Qatar Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Mercedes,MEDIUM_Short,0.8612208628152229,94.071
+Qatar Grand Prix,Dry,McLaren,MEDIUM_Short,Red Bull Racing,MEDIUM_Short,0.8652087494509249,92.85826666666667
+Qatar Grand Prix,Dry,McLaren,MEDIUM_Short,Ferrari,MEDIUM_Short,0.8652087494509249,92.85826666666667
+Qatar Grand Prix,Dry,McLaren,MEDIUM_Short,Mercedes,MEDIUM_Short,0.8652087494509249,92.85826666666667
+Qatar Grand Prix,Dry,Ferrari,MEDIUM_Short,Red Bull Racing,MEDIUM_Short,0.8592470323299002,94.49609259259259
+Qatar Grand Prix,Dry,Ferrari,MEDIUM_Short,McLaren,MEDIUM_Short,0.8592470323299002,94.49609259259259
+Qatar Grand Prix,Dry,Ferrari,MEDIUM_Short,Mercedes,MEDIUM_Short,0.8592470323299002,94.49609259259259
+Qatar Grand Prix,Dry,Mercedes,MEDIUM_Short,Red Bull Racing,MEDIUM_Short,0.8609432969338627,94.13077777777778
+Qatar Grand Prix,Dry,Mercedes,MEDIUM_Short,McLaren,MEDIUM_Short,0.8609432969338627,94.13077777777778
+Qatar Grand Prix,Dry,Mercedes,MEDIUM_Short,Ferrari,MEDIUM_Short,0.8609432969338627,94.13077777777778
+Saudi Arabian Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,McLaren,HARD_Short,0.8375779477590783,99.00395238095238
+Saudi Arabian Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Ferrari,HARD_Short,0.8375779477590783,99.00395238095238
+Saudi Arabian Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Mercedes,HARD_Short,0.8375779477590783,99.00395238095238
+Saudi Arabian Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,MEDIUM_Short,0.8517173837693001,95.763825
+Saudi Arabian Grand Prix,Dry,McLaren,HARD_Short,Ferrari,HARD_Short,0.8517173837693001,95.763825
+Saudi Arabian Grand Prix,Dry,McLaren,HARD_Short,Mercedes,HARD_Short,0.8517173837693001,95.763825
+Saudi Arabian Grand Prix,Dry,Ferrari,HARD_Short,Red Bull Racing,MEDIUM_Short,0.8500107405402199,96.131375
+Saudi Arabian Grand Prix,Dry,Ferrari,HARD_Short,McLaren,HARD_Short,0.8500107405402199,96.131375
+Saudi Arabian Grand Prix,Dry,Ferrari,HARD_Short,Mercedes,HARD_Short,0.8500107405402199,96.131375
+Saudi Arabian Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,MEDIUM_Short,0.8498677270414967,96.162175
+Saudi Arabian Grand Prix,Dry,Mercedes,HARD_Short,McLaren,HARD_Short,0.8498677270414967,96.162175
+Saudi Arabian Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,HARD_Short,0.8498677270414967,96.162175
+Singapore Grand Prix,Dry,Red Bull Racing,HARD_Short,McLaren,HARD_Short,0.82308669297005,99.09488461538461
+Singapore Grand Prix,Dry,Red Bull Racing,HARD_Short,Ferrari,HARD_Short,0.82308669297005,99.09488461538461
+Singapore Grand Prix,Dry,Red Bull Racing,HARD_Short,Mercedes,HARD_Short,0.82308669297005,99.09488461538461
+Singapore Grand Prix,Dry,McLaren,HARD_Short,Red Bull Racing,HARD_Short,0.8405795110619272,98.162525
+Singapore Grand Prix,Dry,McLaren,HARD_Short,Ferrari,HARD_Short,0.8405795110619272,98.162525
+Singapore Grand Prix,Dry,McLaren,HARD_Short,Mercedes,HARD_Short,0.8405795110619272,98.162525
+Singapore Grand Prix,Dry,Ferrari,HARD_Short,Red Bull Racing,HARD_Short,0.8294640725851578,98.99641071428572
+Singapore Grand Prix,Dry,Ferrari,HARD_Short,McLaren,HARD_Short,0.8294640725851578,98.99641071428572
+Singapore Grand Prix,Dry,Ferrari,HARD_Short,Mercedes,HARD_Short,0.8294640725851578,98.99641071428572
+Singapore Grand Prix,Dry,Mercedes,HARD_Short,Red Bull Racing,HARD_Short,0.8399979383114381,98.287775
+Singapore Grand Prix,Dry,Mercedes,HARD_Short,McLaren,HARD_Short,0.8399979383114381,98.287775
+Singapore Grand Prix,Dry,Mercedes,HARD_Short,Ferrari,HARD_Short,0.8399979383114381,98.287775
+Spanish Grand Prix,Dry,Red Bull Racing,SOFT_Short,McLaren,SOFT_Short,0.8903319570361452,85.15045528455283
+Spanish Grand Prix,Dry,Red Bull Racing,SOFT_Short,Ferrari,SOFT_Short,0.8903319570361452,85.15045528455283
+Spanish Grand Prix,Dry,Red Bull Racing,SOFT_Short,Mercedes,SOFT_Short,0.8903319570361452,85.15045528455283
+Spanish Grand Prix,Dry,McLaren,SOFT_Short,Red Bull Racing,SOFT_Short,0.882155240868733,86.04220408163266
+Spanish Grand Prix,Dry,McLaren,SOFT_Short,Ferrari,SOFT_Short,0.882155240868733,86.04220408163266
+Spanish Grand Prix,Dry,McLaren,SOFT_Short,Mercedes,SOFT_Short,0.882155240868733,86.04220408163266
+Spanish Grand Prix,Dry,Ferrari,SOFT_Short,Red Bull Racing,SOFT_Short,0.8844424054504523,86.08286170212766
+Spanish Grand Prix,Dry,Ferrari,SOFT_Short,McLaren,SOFT_Short,0.8844424054504523,86.08286170212766
+Spanish Grand Prix,Dry,Ferrari,SOFT_Short,Mercedes,SOFT_Short,0.8844424054504523,86.08286170212766
+Spanish Grand Prix,Dry,Mercedes,SOFT_Short,Red Bull Racing,SOFT_Short,0.8854883353436878,84.41581318681318
+Spanish Grand Prix,Dry,Mercedes,SOFT_Short,McLaren,SOFT_Short,0.8854883353436878,84.41581318681318
+Spanish Grand Prix,Dry,Mercedes,SOFT_Short,Ferrari,SOFT_Short,0.8854883353436878,84.41581318681318
+São Paulo Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,McLaren,MEDIUM_Short,0.9174789172728056,81.11022368421054
+São Paulo Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Ferrari,MEDIUM_Short,0.9174789172728056,81.11022368421054
+São Paulo Grand Prix,Dry,Red Bull Racing,MEDIUM_Short,Mercedes,MEDIUM_Short,0.9174789172728056,81.11022368421054
+São Paulo Grand Prix,Dry,McLaren,MEDIUM_Short,Red Bull Racing,MEDIUM_Short,0.8923433932263518,83.46547272727273
+São Paulo Grand Prix,Dry,McLaren,MEDIUM_Short,Ferrari,MEDIUM_Short,0.8923433932263518,83.46547272727273
+São Paulo Grand Prix,Dry,McLaren,MEDIUM_Short,Mercedes,MEDIUM_Short,0.8923433932263518,83.46547272727273
+São Paulo Grand Prix,Dry,Ferrari,MEDIUM_Short,Red Bull Racing,MEDIUM_Short,0.8905728875571559,88.2919393939394
+São Paulo Grand Prix,Dry,Ferrari,MEDIUM_Short,McLaren,MEDIUM_Short,0.8905728875571559,88.2919393939394
+São Paulo Grand Prix,Dry,Ferrari,MEDIUM_Short,Mercedes,MEDIUM_Short,0.8905728875571559,88.2919393939394
+São Paulo Grand Prix,Dry,Mercedes,MEDIUM_Short,Red Bull Racing,MEDIUM_Short,0.9011787648491637,81.42109523809525
+São Paulo Grand Prix,Dry,Mercedes,MEDIUM_Short,McLaren,MEDIUM_Short,0.9011787648491637,81.42109523809525
+São Paulo Grand Prix,Dry,Mercedes,MEDIUM_Short,Ferrari,MEDIUM_Short,0.9011787648491637,81.42109523809525
+United States Grand Prix,Dry,Red Bull Racing,SOFT_Medium,McLaren,SOFT_Medium,0.7997698985803491,101.82607352941176
+United States Grand Prix,Dry,Red Bull Racing,SOFT_Medium,Ferrari,SOFT_Medium,0.7997698985803491,101.82607352941176
+United States Grand Prix,Dry,Red Bull Racing,SOFT_Medium,Mercedes,SOFT_Medium,0.7997698985803491,101.82607352941176
+United States Grand Prix,Dry,McLaren,SOFT_Medium,Red Bull Racing,SOFT_Medium,0.7952343839172739,101.99839344262296
+United States Grand Prix,Dry,McLaren,SOFT_Medium,Ferrari,SOFT_Medium,0.7952343839172739,101.99839344262296
+United States Grand Prix,Dry,McLaren,SOFT_Medium,Mercedes,SOFT_Medium,0.7952343839172739,101.99839344262296
+United States Grand Prix,Dry,Ferrari,SOFT_Medium,Red Bull Racing,SOFT_Medium,0.7963059095869677,102.18853846153846
+United States Grand Prix,Dry,Ferrari,SOFT_Medium,McLaren,SOFT_Medium,0.7963059095869677,102.18853846153846
+United States Grand Prix,Dry,Ferrari,SOFT_Medium,Mercedes,SOFT_Medium,0.7963059095869677,102.18853846153846
+United States Grand Prix,Dry,Mercedes,SOFT_Medium,Red Bull Racing,SOFT_Medium,0.7940109280062652,102.561171875
+United States Grand Prix,Dry,Mercedes,SOFT_Medium,McLaren,SOFT_Medium,0.7940109280062652,102.561171875
+United States Grand Prix,Dry,Mercedes,SOFT_Medium,Ferrari,SOFT_Medium,0.7940109280062652,102.561171875

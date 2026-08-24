@@ -1,0 +1,37 @@
+REAL-TIME BAYESIAN STRATEGY
+STEP 3 - EXPECTED PAYOFF CALCULATION
+======================================================================
+
+Expected payoff equation:
+
+EU(s) = P(Dry) * U(s,Dry) + P(Wet) * U(s,Wet)
+
+where:
+- EU(s) = Expected payoff of strategy s
+- P(Dry) = Probability of dry weather
+- P(Wet) = Probability of wet weather
+- U(s,Dry) = Payoff under dry weather
+- U(s,Wet) = Payoff under wet weather
+
+Historical Wet Probability: 0.000000
+Historical Dry Probability: 1.000000
+
+HISTORICAL BASELINE STRATEGIES
+======================================================================
+
+           Team  WetProbability  DryProbability OptimalStrategy  ExpectedPayoff
+Red Bull Racing             0.0             1.0      HARD_Short        0.870103
+        McLaren             0.0             1.0      HARD_Short        0.878497
+        Ferrari             0.0             1.0    MEDIUM_Short        0.872777
+       Mercedes             0.0             1.0    MEDIUM_Short        0.871103
+
+STRATEGY SWITCH POINTS
+======================================================================
+
+           Team  WetProbability PreviousStrategy  NewStrategy
+Red Bull Racing            0.05       HARD_Short MEDIUM_Short
+        McLaren            0.20       HARD_Short MEDIUM_Short
+        Ferrari            0.10     MEDIUM_Short   HARD_Short
+
+NOTE:
+Expected payoffs are calculated using observed 2025 F1 payoff values and weather probability scenarios. Missing weather-strategy combinations are not assigned synthetic payoff values.

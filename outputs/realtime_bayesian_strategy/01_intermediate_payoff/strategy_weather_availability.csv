@@ -1,0 +1,17 @@
+Team,Strategy,DryObservations,WetObservations
+Red Bull Racing,SOFT_Short,198,0
+Red Bull Racing,MEDIUM_Short,456,4
+Red Bull Racing,HARD_Short,357,2
+Red Bull Racing,INTERMEDIATE_Medium,46,22
+McLaren,SOFT_Short,128,0
+McLaren,MEDIUM_Short,492,4
+McLaren,HARD_Short,411,2
+McLaren,INTERMEDIATE_Medium,55,18
+Ferrari,SOFT_Short,114,0
+Ferrari,MEDIUM_Short,521,3
+Ferrari,HARD_Short,412,3
+Ferrari,INTERMEDIATE_Medium,43,21
+Mercedes,SOFT_Short,145,0
+Mercedes,MEDIUM_Short,417,3
+Mercedes,HARD_Short,402,3
+Mercedes,INTERMEDIATE_Medium,36,20

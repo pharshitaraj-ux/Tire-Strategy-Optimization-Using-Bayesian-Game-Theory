@@ -482,8 +482,737 @@ This bar chart compares the expected payoff achieved by each team's recommended 
 This chart shows how often each strategy is recommended across the four teams. It highlights whether a single strategy dominates
 or whether different teams require different strategies under uncertainty.
 
+#------------------------------------------------------------------------------------------------
+#tyre degradation  analysis (models)
+This is important: we are not just generating more charts.
+Our existing pipeline already says:
+“This strategy has a higher payoff.”
+This new analysis helps answer:
+“What observed tyre behaviour supports that payoff?”
+For example, if Soft has lower average lap time but higher wear, that creates the strategic trade-off:
+Performance Gain↔Tyre Degradation
+That is exactly the kind of relationship we want feeding into the game-theoretic interpretation.
+Equation we can eventually use in the PPT
+A simple degradation relationship is
+Di​=ΔTi​/ΔLi​​
+where:
+Di= degradation rate of tyre strategy i
+ΔLi = change in lap time
+ΔTi = change in tyre life 
+So if lap time increases as tyre life increases:
+Di>0 ;means the tyre is losing performance as the stint progresses.
+We will not claim this proves causality; it is an empirical relationship 
+from the 2025 race data.
+The analysis is working and the ranking is meaningful:
 
+Strategy	Avg Payoff	Avg Lap Time	Avg Tyre Life
+SOFT_Short	0.8691	91.59 s	5.97
+HARD_Short	0.8690	92.02 s	5.51
+MEDIUM_Short	0.8676	92.31 s	5.54
+SOFT_Medium	0.8435	87.45 s	16.57
+MEDIUM_Medium	0.8376	88.41 s	16.93
+HARD_Medium	0.8349	88.42 s	17.56
+SOFT_Long	0.7822	89.44 s	28.92
+MEDIUM_Long	0.7790	87.81 s	31.46
+Important observation
 
+There is an interesting trade-off:
+
+Short strategies
+
+Have the highest payoffs.
+Have relatively low tyre life.
+Represent aggressive short-stint decisions.
+
+Medium strategies
+
+Have lower average payoff.
+Have substantially longer tyre life.
+Give lower average lap times in this aggregated analysis.
+
+Long strategies
+
+Have the lowest payoffs.
+Have much longer tyre life.
+Represent endurance-oriented strategies.
+
+So this is useful evidence for our game model because the strategy isn't simply:
+
+"Choose the tyre with the fastest lap."
+
+It involves a trade-off between pace, tyre usage and stint length.
+#-----------------------------------------------------------------------------------------
+OPONENT INTERACTION ANALYSIS(models/)-Why this is different from our previous Nash result
+
+Previously we had:
+E[Ui​(si​)]=P(Dry)Ui​(si​,Dry)+P(Wet)Ui​(si​,Wet)
+So we determined:
+"Given uncertainty about weather, which strategy gives the highest expected payoff?"
+Now we're adding:
+         E[Ui​(si​,sj​)]
+So we're asking:
+
+"Which strategy is best for Team i, given the strategy adopted by Team j?"
+
+And the best response is:
+BRi​(sj​)=argsi​max​E[Ui​(si​,sj​)]
+This is the part that makes the strategic interaction explicit.
+#--------------------------------------------------------------------------------------
+NEXT STAGE — Weather Probability Sensitivity Analysis
+What we will analyze
+For each team:
+Red Bull Racing, McLaren, Ferrari, Mercedes
+we will vary: P(Wet)
+from 0% to 100%, and calculate the expected payoff of each strategy.
+he Bayesian expected payoff is:
+          E[Ui​(s)]=P(Dry)Ui​(s,Dry)+P(Wet)Ui​(s,Wet)
+Since:
+        P(Dry)=1−P(Wet)
+we get:
+      E[Ui​(s)]=(1−p)Ui​(s,Dry)+pUi​(s,Wet)
+where:
+i = team
+s = tyre strategy
+p = probability of wet weather
+Ui(s,Dry) = payoff under dry weather
+Ui(s,Wet) = payoff under wet weather
+
+ANALYSIS(Weather senstivity):
+   Weather-Probability Sensitivity — Actual Result
+   Your model tested:
+     P(Wet)=0%,5%,10%,…,100%
+   using the Bayesian expected payoff:
+          E[Ui​(s)]=P(Dry)Ui​(s,Dry)+P(Wet)Ui​(s,Wet)
+   with:
+        P(Dry)=1−P(Wet)
+Strategy Switching Points-
+| Team                | Initially optimal  | Switch at (P(Wet)) | New optimal strategy |
+| ------------------- | ------------------ | -----------------: | -------------------- |
+| **Red Bull Racing** | HARD_Short         |             **5%** | MEDIUM_Short         |
+| **McLaren**         | HARD_Short         |            **20%** | MEDIUM_Short         |
+| **Ferrari**         | MEDIUM_Short       |            **10%** | HARD_Short           |
+| **Mercedes**        | No switch detected |                  — | Remains unchanged    |
+What this means
+
+Red Bull Racing:
+The most weather-sensitive team in this analysis. Even when wet-weather probability reaches only 5%, the model changes its recommendation from HARD_Short to MEDIUM_Short.
+
+McLaren:
+More robust to weather uncertainty. It continues with HARD_Short until wet-weather probability reaches approximately 20%, after which MEDIUM_Short becomes preferable.
+
+Ferrari:
+Shows the opposite transition. At low wet probability, MEDIUM_Short is preferred, but at approximately 10%, the model switches to HARD_Short.
+
+Mercedes:
+No strategy switch was detected across the tested 0–100% range. That means, among the two strategies currently available in the common payoff matrices, its preferred strategy is comparatively robust to
+ the assumed weather probability.
+#--------------------------------------------------------------------------------
+Yes. We’ll implement the **real-time scenario as a separate final module**, without disturbing the work already completed.
+
+# Real-Time Bayesian Strategy Recommendation — Implementation Steps
+
+## Phase 1 — Extend the strategy space
+
+### Step 1. Add Intermediate properly
+
+Current model:
+
+```text
+SOFT_Short
+MEDIUM_Short
+HARD_Short
+SOFT_Medium
+```
+
+Extend it to include:
+
+```text
+SOFT
+MEDIUM
+HARD
+INTERMEDIATE
+```
+
+We should retain the stint concept where useful, but **Intermediate must have actual data-derived payoffs**.
+
+**Goal:** obtain valid:
+
+```text
+Team × Strategy × WeatherState → Payoff
+```
+
+for:
+
+* Red Bull Racing
+* McLaren
+* Ferrari
+* Mercedes
+
+under:
+
+* Dry
+* Wet
+
+---
+
+# Phase 2 — Build the real-time input layer
+
+### Step 2. Create race-state inputs
+
+Create:
+
+```text
+models/realtime_strategy_recommender.py
+```
+
+Inputs:
+
+```text
+Team
+Opponent
+WetProbability
+CurrentCompound
+TyreLife
+OpponentStrategy
+```
+
+Example:
+
+```text
+Team              = Red Bull Racing
+Opponent          = McLaren
+WetProbability    = 0.20
+CurrentCompound   = MEDIUM
+TyreLife          = 15
+OpponentStrategy  = HARD_Short
+```
+
+---
+
+# Phase 3 — Calculate weather probabilities
+
+### Step 3. Convert wet probability into Bayesian state probabilities
+
+If:
+
+```text
+Wet probability = 20%
+```
+
+then:
+
+[
+P(Wet)=0.20
+]
+
+[
+P(Dry)=1-0.20=0.80
+]
+
+The program should accept different values:
+
+```text
+0%
+10%
+20%
+30%
+...
+100%
+```
+
+This allows us to study how the recommendation changes.
+
+---
+
+# Phase 4 — Calculate expected payoff
+
+### Step 4. Calculate payoff for every candidate strategy
+
+Use:
+
+[
+E[U(s)]
+=======
+
+P(Dry)U(s,Dry)
++
+P(Wet)U(s,Wet)
+]
+
+For example:
+
+```text
+Strategy       Dry Payoff    Wet Payoff    Expected Payoff
+HARD           0.87          0.76          calculated
+MEDIUM         0.87          0.87          calculated
+SOFT           calculated    calculated    calculated
+INTERMEDIATE   calculated    calculated    calculated
+```
+
+The program should **not hard-code the final recommendation**.
+
+It should calculate it from the payoff matrices.
+
+---
+
+# Phase 5 — Add opponent interaction
+
+### Step 5. Condition the recommendation on opponent strategy
+
+We already implemented opponent interaction.
+
+Now connect it to the real-time module.
+
+For example:
+
+```text
+Red Bull
+   ↓
+Opponent = McLaren
+   ↓
+McLaren strategy = HARD
+   ↓
+Evaluate Red Bull's possible responses
+   ↓
+Best response
+```
+
+Use:
+
+[
+BR_i(s_j)
+=========
+
+\arg\max_{s_i}U_i(s_i,s_j)
+]
+
+This answers:
+
+> **“Given what my opponent is doing, what should I do?”**
+
+rather than merely:
+
+> “Which tyre is fastest?”
+
+---
+
+# Phase 6 — Bayesian strategic decision
+
+### Step 6. Determine the optimal strategy
+
+For each strategy:
+
+[
+E[U(s_1)],E[U(s_2)],...,E[U(s_n)]
+]
+
+Then:
+
+[
+s^*=\arg\max_s E[U(s)]
+]
+
+Output:
+
+```text
+Recommended Strategy:
+MEDIUM_Short
+
+Expected Payoff:
+0.8672
+```
+
+---
+
+# Phase 7 — Calculate strategy switch points
+
+### Step 7. Test different weather probabilities
+
+Run:
+
+```text
+P(Wet) = 0.00
+P(Wet) = 0.05
+P(Wet) = 0.10
+...
+P(Wet) = 1.00
+```
+
+For every probability calculate the optimal strategy.
+
+Output:
+
+| Wet Probability | Optimal Strategy |
+| --------------: | ---------------- |
+|              0% | HARD             |
+|             10% | HARD             |
+|             20% | MEDIUM           |
+|             30% | MEDIUM           |
+|             ... | ...              |
+
+**The actual values will come from our model.**
+
+---
+
+# Phase 8 — Detect switching points
+
+### Step 8. Identify when the strategy changes
+
+Example:
+
+```text
+0–14%       HARD
+15–47%      MEDIUM
+48–100%     INTERMEDIATE
+```
+
+The exact thresholds will be calculated.
+
+Output:
+
+```text
+Previous Strategy
+New Strategy
+Switch Probability
+```
+
+This becomes one of our strongest findings:
+
+> **The model identifies weather-probability thresholds at which the optimal tyre strategy changes.**
+
+---
+
+# Phase 9 — Add tyre degradation
+
+### Step 9. Include current tyre life
+
+We already created:
+
+```text
+tyre_degradation_analysis.py
+```
+
+Now use its information in the recommendation.
+
+Example:
+
+```text
+Current tyre:
+MEDIUM
+
+Tyre life:
+18 laps
+
+Wear:
+High
+```
+
+A strategy that looks optimal from weather alone may no longer be optimal after considering degradation.
+
+Conceptually:
+
+```text
+Weather
+   +
+Tyre degradation
+   +
+Opponent
+   ↓
+Expected payoff
+   ↓
+Recommendation
+```
+
+---
+
+# Phase 10 — Strategy robustness
+
+### Step 10. Calculate the advantage of the selected strategy
+
+Suppose:
+
+```text
+Best strategy       = MEDIUM
+Expected payoff     = 0.867
+Second best         = HARD
+Expected payoff     = 0.849
+```
+
+Calculate:
+
+[
+R=U_{best}-U_{second}
+]
+
+[
+R=0.867-0.849=0.018
+]
+
+This tells us whether the recommendation is decisive or close.
+
+Output:
+
+```text
+Recommended Strategy : MEDIUM
+Expected Payoff      : 0.867
+Second Best          : HARD
+Payoff Margin        : 0.018
+Decision Strength    : Moderate
+```
+
+---
+
+# Phase 11 — Generate the real-time report
+
+### Step 11. Save results
+
+Create:
+
+```text
+outputs/bayesian_game/realtime_strategy/
+```
+
+Files:
+
+```text
+realtime_recommendation.csv
+strategy_expected_payoffs.csv
+weather_strategy_thresholds.csv
+strategy_robustness.csv
+realtime_strategy_summary.txt
+```
+
+And figures:
+
+```text
+strategy_vs_weather_probability.png
+expected_payoff_comparison.png
+strategy_switch_points.png
+```
+
+---
+
+# Phase 12 — Run example scenarios
+
+### Step 12. Test fixed scenarios
+
+We should demonstrate at least these:
+
+### Scenario 1 — Dry-dominant
+
+```text
+Wet probability = 10%
+```
+
+### Scenario 2 — Uncertain
+
+```text
+Wet probability = 30%
+```
+
+### Scenario 3 — High rain risk
+
+```text
+Wet probability = 60%
+```
+
+### Scenario 4 — Very high rain risk
+
+```text
+Wet probability = 80%
+```
+
+For each:
+
+```text
+Team
+Opponent
+Weather probability
+Candidate strategies
+Expected payoffs
+Opponent strategy
+Best response
+Final recommendation
+```
+
+---
+
+# Phase 13 — Two-team strategic experiment
+
+### Step 13. Run Team A vs Team B
+
+This is the experiment you proposed.
+
+Example:
+
+```text
+Team A = Red Bull Racing
+Team B = McLaren
+```
+
+Then:
+
+```text
+             McLaren
+          HARD MEDIUM SOFT
+Red Bull
+HARD
+MEDIUM
+SOFT
+INTERMEDIATE
+```
+
+Calculate expected payoffs and best responses.
+
+Then identify the equilibrium.
+
+---
+
+# Phase 14 — Bayesian Nash Equilibrium under changing weather
+
+### Step 14. Recalculate equilibrium at different probabilities
+
+Instead of having **one static BNE**, test:
+
+```text
+P(Wet) = 10%
+P(Wet) = 20%
+P(Wet) = 30%
+...
+```
+
+Then observe:
+Weather uncertainty
+        ↓
+Payoff changes
+        ↓
+Best response changes
+        ↓
+Equilibrium may change
+
+This is much more aligned with the actual research problem.
+# Phase 15 — Final real-time recommendation
+
+### Step 15. Produce a single decision output
+
+For example:
+
+==================================================
+REAL-TIME BAYESIAN STRATEGY RECOMMENDATION
+==================================================
+
+Team              : Red Bull Racing
+Opponent          : McLaren
+
+Wet Probability   : 20%
+Dry Probability   : 80%
+
+Opponent Strategy : HARD_Short
+
+--------------------------------------------------
+Strategy          Expected Payoff
+--------------------------------------------------
+SOFT_Short              ...
+MEDIUM_Short            ...
+HARD_Short              ...
+INTERMEDIATE_Medium     ...
+
+--------------------------------------------------
+
+Recommended Strategy : MEDIUM_Short
+
+Best Response         : MEDIUM_Short
+Expected Payoff       : ...
+
+Second Best           : HARD_Short
+Payoff Margin         : ...
+
+Decision Strength     : ...
+
+==================================================
+```
+---
+
+# Final implementation structure
+
+Your project will then look like:
+
+```text
+DATA
+ ↓
+PREPROCESSING
+ ↓
+EDA
+ ↓
+FEATURE ENGINEERING
+ ↓
+BAYESIAN GAME FORMULATION
+ ↓
+PAYOFF MATRIX
+ ↓
+BAYESIAN NASH EQUILIBRIUM
+ ↓
+ ┌─────────────────────────────┐
+ │ Additional Analysis         │
+ │                             │
+ │ 1. Tyre degradation         │
+ │ 2. Opponent interaction     │
+ │ 3. Weather sensitivity      │
+ └─────────────────────────────┘
+ ↓
+REAL-TIME STRATEGY MODULE
+ ↓
+Weather Probability
++
+Tyre Condition
++
+Opponent Strategy
+ ↓
+Expected Payoff
+ ↓
+Best Response
+ ↓
+Bayesian Nash Equilibrium
+ ↓
+Strategy Switch Point
+ ↓
+Robustness
+ ↓
+FINAL RECOMMENDATION
+ ↓
+DASHBOARD
+
+**1 → Intermediate payoff extension**
+**2 → Real-time input module**
+**3 → Expected-payoff calculator**
+**4 → Opponent-conditioned recommendation**
+**5 → Weather probability sweep**
+**6 → Strategy switch detection**
+**7 → Tyre degradation integration**
+**8 → Robustness score**
+**9 → Team-vs-team BNE experiment**
+**10 → Final recommendation/report**
+
+**3 → Expected-payoff calculator**:-
+STEP 1
+Historical F1 data
+       ↓
+U(Strategy, Weather)
+       ↓
+Dry/Wet payoffs
+
+STEP 2
+Historical/scenario weather
+       ↓
+P(Dry), P(Wet)
+
+STEP 3
+Both are combined
+       ↓
+Expected Payoff
+       ↓
+Best strategy at each rain probability
+#--------------------------------------------------
 #-------------------------------
 Running Commands:
 #------------------------------
@@ -528,3 +1257,73 @@ RUN:
 11.Performance Evalutioon
 RUN:
    python models/performance_evaluation.py
+
+12.Tyre degradation analysis:
+RUN:
+   python models/tyre_degradation_analysis.py
+13.Opponent interaction Analysis
+RUN:
+    python models/opponent_interaction_analysis.py
+14.Weather Probability Sensitivity
+RUN:
+   python models/weather_probability_sensitivity.py
+
+Real Time Analysis-
+15.intermediate_optimization
+RUN: 
+     python models/realtime_bayesian_strategy/intermediate_payoff_extension.py
+
+16.Weather probability
+RUN:
+    python models/realtime_bayesian_strategy/weather_probability_estimation.py
+
+17.Expected PayoffRUN:
+    python models/realtime_bayesian_strategy/expected_payoff_calculation.py
+
+18.Bayseian Recommendation-
+RUN:
+     python models/realtime_bayesian_strategy/04_bayesian_strategy_recommendation.py
+19.Real Time Startegy Input
+RUN:
+   python models/realtime_bayesian_strategy/05_realtime_strategy_input.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What we did
+We took two dimensions from your dataset:
+Actual F1 tyre compound
+SOFT
+MEDIUM
+HARD
+INTERMEDIATE
+Unknown
+and combined the compound with a stint-length category that we engineered:
+Model strategy	Meaning
+SOFT_Short	Soft tyre + short stint
+SOFT_Medium	Soft tyre + medium-length stint
+SOFT_Long	Soft tyre + long stint
+MEDIUM_Short	Medium tyre + short stint
+MEDIUM_Medium	Medium tyre + medium stint
+MEDIUM_Long	Medium tyre + long stint
+HARD_Short	Hard tyre + short stint
+HARD_Medium	Hard tyre + medium stint
+HARD_Long	Hard tyre + long stint
+INTERMEDIATE_Short	Intermediate + short stint
+etc.	
+
+So Short, Medium, and Long are not tyre compounds. They represent the stint-duration category 
+we created during feature engineering.

@@ -1,0 +1,21 @@
+WEATHER PROBABILITY SENSITIVITY ANALYSIS
+========================================
+
+Teams:
+- Red Bull Racing
+- McLaren
+- Ferrari
+- Mercedes
+
+Strategies:
+- SOFT_Short
+- HARD_Short
+- MEDIUM_Short
+- SOFT_Medium
+
+Strategy Switch Points:
+
+           Team  WetProbability PreviousStrategy  NewStrategy
+Red Bull Racing            0.05       HARD_Short MEDIUM_Short
+        McLaren            0.20       HARD_Short MEDIUM_Short
+        Ferrari            0.10     MEDIUM_Short   HARD_Short

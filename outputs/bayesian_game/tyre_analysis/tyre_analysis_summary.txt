@@ -1,0 +1,49 @@
+============================================================
+TYRE DEGRADATION & STRATEGY ANALYSIS SUMMARY
+============================================================
+
+Purpose:
+Analyse the relationship between tyre life, tyre wear, lap time and strategy payoff.
+
+Compound Performance:
+    Compound  AverageTyreWear  MaximumTyreWear  AverageTyreLife  AverageLapTime  LapCount
+        HARD              NaN              NaN        17.256498       89.399670     10850
+INTERMEDIATE              NaN              NaN        12.692741      106.544487      1598
+      MEDIUM              NaN              NaN        13.623563       89.960934     10525
+        SOFT              NaN              NaN        12.222390       89.364463      3305
+
+Top Strategies by Average Payoff:
+           Strategy  AveragePayoff  AverageLapTime  AverageTyreLife  AverageTyreWear
+         SOFT_Short       0.869118       91.591879         5.966447              NaN
+         HARD_Short       0.869043       92.024742         5.508442              NaN
+       MEDIUM_Short       0.867592       92.306532         5.542214              NaN
+        SOFT_Medium       0.843539       87.447014        16.574990              NaN
+      MEDIUM_Medium       0.837552       88.410358        16.933303              NaN
+        HARD_Medium       0.834861       88.415951        17.564000              NaN
+     Unknown_Medium       0.811799       97.535819        13.000000              NaN
+INTERMEDIATE_Medium       0.783784       99.913722        17.017251              NaN
+          SOFT_Long       0.782160       89.436472        28.915241              NaN
+        MEDIUM_Long       0.778961       87.813804        31.455450              NaN
+
+Weather-Specific Strategy Performance:
+WeatherState            Strategy  AveragePayoff  AverageLapTime  AverageTyreWear  Observations
+         Dry           HARD_Long       0.768449       87.603681              NaN          2465
+         Dry         HARD_Medium       0.835347       88.298297              NaN          4699
+         Dry          HARD_Short       0.869634       91.897111              NaN          3649
+         Dry   INTERMEDIATE_Long       0.738193       98.526284              NaN           208
+         Dry INTERMEDIATE_Medium       0.772544      102.771402              NaN           378
+         Dry  INTERMEDIATE_Short       0.773113      112.311422              NaN           640
+         Dry         MEDIUM_Long       0.779158       87.551457              NaN          1122
+         Dry       MEDIUM_Medium       0.837739       88.367096              NaN          4886
+         Dry        MEDIUM_Short       0.867995       92.223286              NaN          4486
+         Dry           SOFT_Long       0.781869       89.151200              NaN           195
+         Dry         SOFT_Medium       0.843715       87.403906              NaN          1524
+         Dry          SOFT_Short       0.870724       91.274598              NaN          1586
+         Dry      Unknown_Medium       0.812501       97.384793              NaN           411
+         Wet         HARD_Medium       0.800768      100.139167              NaN            12
+         Wet          HARD_Short       0.814070      103.817080              NaN            25
+         Wet   INTERMEDIATE_Long       0.788015       89.918333              NaN             6
+         Wet INTERMEDIATE_Medium       0.807048       93.906909              NaN           187
+         Wet  INTERMEDIATE_Short       0.762469      116.969950              NaN           179
+         Wet       MEDIUM_Medium       0.816129       96.805667              NaN             9
+         Wet        MEDIUM_Short       0.821207      102.707000              NaN            22

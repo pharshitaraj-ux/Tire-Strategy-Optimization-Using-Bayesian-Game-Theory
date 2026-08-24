@@ -1,0 +1,89 @@
+=================================================================
+STRATEGIC & OPPONENT INTERACTION SUMMARY
+=================================================================
+
+Teams analysed:
+- Red Bull Racing
+- McLaren
+- Ferrari
+- Mercedes
+
+Strategies analysed:
+- SOFT_Short
+- HARD_Short
+- MEDIUM_Short
+- SOFT_Medium
+
+
+Best Response Analysis:
+
+      FocalTeam    OpponentTeam OpponentStrategy BestResponse  ExpectedPayoff  Observations
+Red Bull Racing         McLaren     MEDIUM_Short MEDIUM_Short        0.891344             4
+Red Bull Racing         McLaren       SOFT_Short   SOFT_Short        0.890332             1
+Red Bull Racing         McLaren       HARD_Short  SOFT_Medium        0.882493             1
+Red Bull Racing         McLaren      SOFT_Medium  SOFT_Medium        0.842848             2
+Red Bull Racing         Ferrari       SOFT_Short   SOFT_Short        0.890332             1
+Red Bull Racing         Ferrari     MEDIUM_Short MEDIUM_Short        0.876292             4
+Red Bull Racing         Ferrari       HARD_Short   HARD_Short        0.865783            11
+Red Bull Racing         Ferrari      SOFT_Medium  SOFT_Medium        0.842848             2
+Red Bull Racing        Mercedes       SOFT_Short   SOFT_Short        0.890332             1
+Red Bull Racing        Mercedes     MEDIUM_Short MEDIUM_Short        0.876292             4
+Red Bull Racing        Mercedes       HARD_Short   HARD_Short        0.866580            12
+Red Bull Racing        Mercedes      SOFT_Medium  SOFT_Medium        0.844021             4
+        McLaren Red Bull Racing     MEDIUM_Short MEDIUM_Short        0.892480             4
+        McLaren Red Bull Racing      SOFT_Medium   HARD_Short        0.889799             1
+        McLaren Red Bull Racing       SOFT_Short   SOFT_Short        0.882155             1
+        McLaren Red Bull Racing       HARD_Short   HARD_Short        0.876205            10
+        McLaren         Ferrari     MEDIUM_Short MEDIUM_Short        0.882606             4
+        McLaren         Ferrari       SOFT_Short   SOFT_Short        0.882155             1
+        McLaren         Ferrari       HARD_Short   HARD_Short        0.862228            11
+        McLaren         Ferrari      SOFT_Medium  SOFT_Medium        0.839320             2
+        McLaren        Mercedes     MEDIUM_Short MEDIUM_Short        0.903375             3
+        McLaren        Mercedes      SOFT_Medium   HARD_Short        0.889799             1
+        McLaren        Mercedes       SOFT_Short   SOFT_Short        0.882155             1
+        McLaren        Mercedes       HARD_Short   HARD_Short        0.863593            12
+        Ferrari Red Bull Racing       SOFT_Short   SOFT_Short        0.884442             1
+        Ferrari Red Bull Racing       HARD_Short MEDIUM_Short        0.874214             1
+        Ferrari Red Bull Racing      SOFT_Medium MEDIUM_Short        0.872437             2
+        Ferrari Red Bull Racing     MEDIUM_Short MEDIUM_Short        0.870642             4
+        Ferrari         McLaren       SOFT_Short   SOFT_Short        0.884442             1
+        Ferrari         McLaren     MEDIUM_Short MEDIUM_Short        0.881616             4
+        Ferrari         McLaren       HARD_Short   HARD_Short        0.858867            11
+        Ferrari         McLaren      SOFT_Medium  SOFT_Medium        0.839114             2
+        Ferrari        Mercedes       SOFT_Short   SOFT_Short        0.884442             1
+        Ferrari        Mercedes       HARD_Short MEDIUM_Short        0.874214             1
+        Ferrari        Mercedes      SOFT_Medium MEDIUM_Short        0.872437             2
+        Ferrari        Mercedes     MEDIUM_Short MEDIUM_Short        0.870642             4
+       Mercedes Red Bull Racing       SOFT_Short   SOFT_Short        0.885488             1
+       Mercedes Red Bull Racing     MEDIUM_Short MEDIUM_Short        0.872455             4
+       Mercedes Red Bull Racing       HARD_Short   HARD_Short        0.870963            12
+       Mercedes Red Bull Racing      SOFT_Medium  SOFT_Medium        0.840031             4
+       Mercedes         McLaren     MEDIUM_Short MEDIUM_Short        0.902449             3
+       Mercedes         McLaren       SOFT_Short   SOFT_Short        0.885488             1
+       Mercedes         McLaren       HARD_Short  SOFT_Medium        0.880241             1
+       Mercedes         McLaren      SOFT_Medium  SOFT_Medium        0.836018             2
+       Mercedes         Ferrari       SOFT_Short   SOFT_Short        0.885488             1
+       Mercedes         Ferrari     MEDIUM_Short   HARD_Short        0.873168             1
+       Mercedes         Ferrari       HARD_Short   HARD_Short        0.860679            13
+       Mercedes         Ferrari      SOFT_Medium  SOFT_Medium        0.836018             2
+
+
+Strategy Switching Summary:
+
+      FocalTeam BestResponseStrategy  NumberOfOpponentConditions
+Red Bull Racing          SOFT_Medium                           4
+Red Bull Racing         MEDIUM_Short                           3
+Red Bull Racing           SOFT_Short                           3
+Red Bull Racing           HARD_Short                           2
+        McLaren           HARD_Short                           5
+        McLaren         MEDIUM_Short                           3
+        McLaren           SOFT_Short                           3
+        McLaren          SOFT_Medium                           1
+        Ferrari         MEDIUM_Short                           7
+        Ferrari           SOFT_Short                           3
+        Ferrari           HARD_Short                           1
+        Ferrari          SOFT_Medium                           1
+       Mercedes          SOFT_Medium                           4
+       Mercedes           SOFT_Short                           3
+       Mercedes           HARD_Short                           3
+       Mercedes         MEDIUM_Short                           2

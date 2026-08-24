@@ -1,0 +1,25 @@
+REAL-TIME BAYESIAN STRATEGY
+STEP 2 - WEATHER PROBABILITY ESTIMATION
+======================================================================
+
+Purpose:
+Estimate the historical Dry/Wet probability from the 2025 dataset and create probability scenarios for Bayesian strategy decision-making.
+
+Selected Teams:
+- Red Bull Racing
+- McLaren
+- Ferrari
+- Mercedes
+
+Historical Weather Probability:
+P(Dry) = 0.981363
+P(Wet) = 0.018637
+
+Probability Model:
+P(Dry) + P(Wet) = 1
+
+Scenario Range:
+Wet probability is varied from 0% to 100% in 5% increments.
+
+Important Interpretation:
+The historical probability represents the empirical weather distribution in the selected 2025 data. The scenario probabilities are used for decision sensitivity analysis and do not represent a live weather forecast.

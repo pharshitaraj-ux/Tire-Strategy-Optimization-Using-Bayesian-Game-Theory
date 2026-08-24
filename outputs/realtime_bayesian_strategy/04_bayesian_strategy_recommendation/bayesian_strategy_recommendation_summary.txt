@@ -1,0 +1,106 @@
+REAL-TIME BAYESIAN STRATEGY
+STEP 4 - BAYESIAN STRATEGY RECOMMENDATION
+======================================================================
+
+Decision Rule:
+For each team and weather-probability scenario, select the available strategy with the highest expected payoff.
+
+Recommended Strategy:
+======================================================================
+           Team  WetProbability  DryProbability RecommendedStrategy  ExpectedPayoff
+Red Bull Racing            0.00            1.00          HARD_Short        0.870103
+        McLaren            0.00            1.00          HARD_Short        0.878497
+        Ferrari            0.00            1.00        MEDIUM_Short        0.872777
+       Mercedes            0.00            1.00        MEDIUM_Short        0.871103
+Red Bull Racing            0.05            0.95        MEDIUM_Short        0.867220
+        McLaren            0.05            0.95          HARD_Short        0.874282
+        Ferrari            0.05            0.95        MEDIUM_Short        0.869337
+       Mercedes            0.05            0.95        MEDIUM_Short        0.869081
+Red Bull Racing            0.10            0.90        MEDIUM_Short        0.867215
+        McLaren            0.10            0.90          HARD_Short        0.870066
+        Ferrari            0.10            0.90          HARD_Short        0.867070
+       Mercedes            0.10            0.90        MEDIUM_Short        0.867059
+Red Bull Racing            0.15            0.85        MEDIUM_Short        0.867209
+        McLaren            0.15            0.85          HARD_Short        0.865851
+        Ferrari            0.15            0.85          HARD_Short        0.864941
+       Mercedes            0.15            0.85        MEDIUM_Short        0.865037
+Red Bull Racing            0.20            0.80        MEDIUM_Short        0.867203
+        McLaren            0.20            0.80        MEDIUM_Short        0.863168
+        Ferrari            0.20            0.80          HARD_Short        0.862813
+       Mercedes            0.20            0.80        MEDIUM_Short        0.863016
+Red Bull Racing            0.25            0.75        MEDIUM_Short        0.867198
+        McLaren            0.25            0.75        MEDIUM_Short        0.860698
+        Ferrari            0.25            0.75          HARD_Short        0.860684
+       Mercedes            0.25            0.75        MEDIUM_Short        0.860994
+Red Bull Racing            0.30            0.70        MEDIUM_Short        0.867192
+        McLaren            0.30            0.70        MEDIUM_Short        0.858228
+        Ferrari            0.30            0.70          HARD_Short        0.858556
+       Mercedes            0.30            0.70        MEDIUM_Short        0.858972
+Red Bull Racing            0.35            0.65        MEDIUM_Short        0.867186
+        McLaren            0.35            0.65        MEDIUM_Short        0.855758
+        Ferrari            0.35            0.65          HARD_Short        0.856428
+       Mercedes            0.35            0.65        MEDIUM_Short        0.856951
+Red Bull Racing            0.40            0.60        MEDIUM_Short        0.867181
+        McLaren            0.40            0.60        MEDIUM_Short        0.853288
+        Ferrari            0.40            0.60          HARD_Short        0.854299
+       Mercedes            0.40            0.60        MEDIUM_Short        0.854929
+Red Bull Racing            0.45            0.55        MEDIUM_Short        0.867175
+        McLaren            0.45            0.55        MEDIUM_Short        0.850818
+        Ferrari            0.45            0.55          HARD_Short        0.852171
+       Mercedes            0.45            0.55        MEDIUM_Short        0.852907
+Red Bull Racing            0.50            0.50        MEDIUM_Short        0.867169
+        McLaren            0.50            0.50        MEDIUM_Short        0.848349
+        Ferrari            0.50            0.50          HARD_Short        0.850042
+       Mercedes            0.50            0.50        MEDIUM_Short        0.850885
+Red Bull Racing            0.55            0.45        MEDIUM_Short        0.867164
+        McLaren            0.55            0.45        MEDIUM_Short        0.845879
+        Ferrari            0.55            0.45          HARD_Short        0.847914
+       Mercedes            0.55            0.45        MEDIUM_Short        0.848864
+Red Bull Racing            0.60            0.40        MEDIUM_Short        0.867158
+        McLaren            0.60            0.40        MEDIUM_Short        0.843409
+        Ferrari            0.60            0.40          HARD_Short        0.845786
+       Mercedes            0.60            0.40        MEDIUM_Short        0.846842
+Red Bull Racing            0.65            0.35        MEDIUM_Short        0.867152
+        McLaren            0.65            0.35        MEDIUM_Short        0.840939
+        Ferrari            0.65            0.35          HARD_Short        0.843657
+       Mercedes            0.65            0.35        MEDIUM_Short        0.844820
+Red Bull Racing            0.70            0.30        MEDIUM_Short        0.867147
+        McLaren            0.70            0.30        MEDIUM_Short        0.838469
+        Ferrari            0.70            0.30          HARD_Short        0.841529
+       Mercedes            0.70            0.30        MEDIUM_Short        0.842799
+Red Bull Racing            0.75            0.25        MEDIUM_Short        0.867141
+        McLaren            0.75            0.25        MEDIUM_Short        0.835999
+        Ferrari            0.75            0.25          HARD_Short        0.839401
+       Mercedes            0.75            0.25        MEDIUM_Short        0.840777
+Red Bull Racing            0.80            0.20        MEDIUM_Short        0.867135
+        McLaren            0.80            0.20        MEDIUM_Short        0.833529
+        Ferrari            0.80            0.20          HARD_Short        0.837272
+       Mercedes            0.80            0.20        MEDIUM_Short        0.838755
+Red Bull Racing            0.85            0.15        MEDIUM_Short        0.867130
+        McLaren            0.85            0.15        MEDIUM_Short        0.831059
+        Ferrari            0.85            0.15          HARD_Short        0.835144
+       Mercedes            0.85            0.15        MEDIUM_Short        0.836734
+Red Bull Racing            0.90            0.10        MEDIUM_Short        0.867124
+        McLaren            0.90            0.10        MEDIUM_Short        0.828589
+        Ferrari            0.90            0.10          HARD_Short        0.833015
+       Mercedes            0.90            0.10        MEDIUM_Short        0.834712
+Red Bull Racing            0.95            0.05        MEDIUM_Short        0.867118
+        McLaren            0.95            0.05        MEDIUM_Short        0.826119
+        Ferrari            0.95            0.05          HARD_Short        0.830887
+       Mercedes            0.95            0.05        MEDIUM_Short        0.832690
+Red Bull Racing            1.00            0.00        MEDIUM_Short        0.867113
+        McLaren            1.00            0.00        MEDIUM_Short        0.823649
+        Ferrari            1.00            0.00          HARD_Short        0.828759
+       Mercedes            1.00            0.00        MEDIUM_Short        0.830668
+
+Strategy Switch Points:
+======================================================================
+           Team  WetProbability PreviousStrategy  NewStrategy
+Red Bull Racing            0.05       HARD_Short MEDIUM_Short
+        McLaren            0.20       HARD_Short MEDIUM_Short
+        Ferrari            0.10     MEDIUM_Short   HARD_Short
+
+Interpretation:
+The model evaluates tyre strategies under different beliefs about future wet weather. As the probability of wet weather changes, the expected payoff of each strategy changes. The strategy with the highest expected payoff is selected as the Bayesian strategy recommendation for that scenario.
+
+This stage represents a Bayesian best-response recommendation based on the current payoff model. A complete multi-player Bayesian Nash equilibrium requires payoff functions explicitly dependent on the strategies selected by all players.

@@ -1,0 +1,4 @@
+Team,WetProbability,PreviousStrategy,NewStrategy
+Red Bull Racing,0.05,HARD_Short,MEDIUM_Short
+McLaren,0.2,HARD_Short,MEDIUM_Short
+Ferrari,0.1,MEDIUM_Short,HARD_Short
