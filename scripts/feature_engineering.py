@@ -50,14 +50,30 @@ df["TemperatureLevel"] = pd.cut(
 )
 
 # ---------------------------------------
-# 3. Tyre Wear Level
+# 3. Tyre Wear Level 
+#TyreWearIndex=(MaxTyreLifestint​−1/MaxTyreLife−1​)×100
 # ---------------------------------------
-
-df["TyreWear"] = pd.cut(
+df["TyreLife"] = pd.to_numeric(
     df["TyreLife"],
-    bins=[0,10,25,100],
-    labels=["Low","Medium","High"]
+    errors="coerce"
 )
+# Find maximum tyre life for each driver's stint
+stint_max_life = (
+    df.groupby(
+        ["Race", "Driver", "Stint"]
+    )["TyreLife"]
+    .transform("max")
+)
+df["TyreWear"] = np.where(
+    stint_max_life > 1,
+    (
+        (df["TyreLife"] - 1) /
+        (stint_max_life - 1)
+    ) * 100,
+    0
+)
+# Keep wear between 0 and 100
+df["TyreWear"] = df["TyreWear"].clip(0, 100)
 
 # ---------------------------------------
 # 4. Pit Stop Indicator
