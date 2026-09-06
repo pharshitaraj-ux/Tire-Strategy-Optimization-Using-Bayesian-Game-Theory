@@ -2,15 +2,15 @@ REAL-TIME BAYESIAN STRATEGY
 STEP 5 - INTERACTIVE REAL-TIME STRATEGY INPUT
 ======================================================================
 
-Team A: McLaren
+Team A: Red Bull Racing
 Opponent Team: Mercedes
 Wet Probability: 0.050000
 Dry Probability: 0.950000
 
 TEAM A RECOMMENDATION
 ----------------------------------------------------------------------
-Strategy: HARD_Short
-Expected Payoff: 0.874282
+Strategy: MEDIUM_Short
+Expected Payoff: 0.867220
 
 OPPONENT RECOMMENDATION
 ----------------------------------------------------------------------

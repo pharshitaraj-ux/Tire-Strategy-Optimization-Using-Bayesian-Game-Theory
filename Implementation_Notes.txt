@@ -1,4 +1,4 @@
-                                                                GAME THEORY-Tire Strategies Optimization Using Bayesian Game
+                          GAME THEORY-Tire Strategies Optimization Using Bayesian Game
 
 fastf1 dataset :
 Documentation: FastF1 Documentation:https://docs.fastf1.dev/?utm_source=chatgpt.com
@@ -1237,7 +1237,7 @@ Part3 : python scripts/eda_part3.py
 Part4 : python scripts/eda_part4.py
 
 6.Feature Engineering :
- scripts/feature_engineering.py
+ python scripts/feature_engineering.py
 
 7.Bayesian Game Formulation
   RUN:

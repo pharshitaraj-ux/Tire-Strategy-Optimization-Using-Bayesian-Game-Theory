@@ -1,2 +1,2 @@
 TeamA,TeamB,WetProbability,DryProbability,TeamARecommendation,TeamAExpectedPayoff,TeamBRecommendation,TeamBExpectedPayoff
-McLaren,Mercedes,0.05,0.95,HARD_Short,0.8742817775730153,MEDIUM_Short,0.8690808011402895
+Red Bull Racing,Mercedes,0.05,0.95,MEDIUM_Short,0.8672203691536635,MEDIUM_Short,0.8690808011402895
