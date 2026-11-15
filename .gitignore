@@ -72,3 +72,6 @@ data/cache/
 .coverage
 htmlcov/
 
+
+# Project cache
+cache/

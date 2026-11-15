@@ -1,27 +1,13 @@
 import os
 import pandas as pd
+import numpy as np
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# ============================================================
+# PATHS
+# ============================================================
 
-DRY = os.path.join(
-    BASE_DIR,
-    "outputs",
-    "bayesian_game",
-    "payoff_matrix_dry.csv"
-)
-
-WET = os.path.join(
-    BASE_DIR,
-    "outputs",
-    "bayesian_game",
-    "payoff_matrix_wet.csv"
-)
-
-FEATURE_DATA = os.path.join(
-    BASE_DIR,
-    "outputs",
-    "feature_engineering",
-    "f1_2025_feature_engineered.csv"
+BASE_DIR = os.path.dirname(
+    os.path.dirname(os.path.abspath(__file__))
 )
 
 OUTPUT_DIR = os.path.join(
@@ -30,121 +16,223 @@ OUTPUT_DIR = os.path.join(
     "bayesian_game"
 )
 
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+players = [
+    "Red Bull Racing",
+    "McLaren",
+    "Ferrari",
+    "Mercedes"
+]
 
-# ---------------------------------------------------
-# Load Files
-# ---------------------------------------------------
+strategies = [
+    "SOFT_Short",
+    "HARD_Short",
+    "MEDIUM_Short",
+    "SOFT_Medium"
+]
 
-dry = pd.read_csv(DRY, index_col=0)
-wet = pd.read_csv(WET, index_col=0)
-df = pd.read_csv(FEATURE_DATA)
 
-# ---------------------------------------------------
-# Prior Probabilities
-# ---------------------------------------------------
+# ============================================================
+# FIND PURE NASH EQUILIBRIA
+# ============================================================
 
-priors = (
-    df["WeatherState"]
-      .value_counts(normalize=True)
-)
+def find_nash_equilibria(u1, u2):
 
-P_DRY = priors.get("Dry", 0)
-P_WET = priors.get("Wet", 0)
+    equilibria = []
 
-print("\nPrior Probabilities")
-print(priors)
+    for s1 in strategies:
+        for s2 in strategies:
 
-# ---------------------------------------------------
-# Common Strategies
-# ---------------------------------------------------
+            p1_payoff = u1.loc[s1, s2]
+            p2_payoff = u2.loc[s1, s2]
 
-common_strategies = sorted(
-    list(
-        set(dry.columns).intersection(
-            set(wet.columns)
+            if pd.isna(p1_payoff) or pd.isna(p2_payoff):
+                continue
+
+            # Player 1 best response to Player 2 strategy
+            column = u1[s2].dropna()
+
+            if len(column) == 0:
+                continue
+
+            p1_best = p1_payoff >= column.max()
+
+            # Player 2 best response to Player 1 strategy
+            row = u2.loc[s1].dropna()
+
+            if len(row) == 0:
+                continue
+
+            p2_best = p2_payoff >= row.max()
+
+            if p1_best and p2_best:
+
+                equilibria.append(
+                    (
+                        s1,
+                        s2,
+                        p1_payoff,
+                        p2_payoff
+                    )
+                )
+
+    return equilibria
+
+
+# ============================================================
+# PROCESS ALL PAIRS
+# ============================================================
+
+pairs = []
+
+for i in range(len(players)):
+    for j in range(i + 1, len(players)):
+        pairs.append((players[i], players[j]))
+
+print("\n")
+print("=" * 75)
+print("BAYESIAN NASH EQUILIBRIUM ANALYSIS")
+
+
+for player1, player2 in pairs:
+
+    folder = (
+        f"{player1}_vs_{player2}"
+        .replace(" ", "_")
+    )
+
+    pair_dir = os.path.join(
+        OUTPUT_DIR,
+        folder
+    )
+
+    u1_file = os.path.join(
+        pair_dir,
+        "U1_bayesian_expected.csv"
+    )
+
+    u2_file = os.path.join(
+        pair_dir,
+        "U2_bayesian_expected.csv"
+    )
+
+    if not os.path.exists(u1_file):
+        print(f"\nMissing: {u1_file}")
+        continue
+
+    u1 = pd.read_csv(
+        u1_file,
+        index_col=0
+    )
+
+    u2 = pd.read_csv(
+        u2_file,
+        index_col=0
+    )
+
+    u1 = u1.apply(
+        pd.to_numeric,
+        errors="coerce"
+    )
+
+    u2 = u2.apply(
+        pd.to_numeric,
+        errors="coerce"
+    )
+
+    equilibria = find_nash_equilibria(
+        u1,
+        u2
+    )
+
+    print("\n" + "=" * 75)
+    print(f"PLAYER 1: {player1}")
+    print(f"PLAYER 2: {player2}")
+    #print("=" * 75)
+
+    if len(equilibria) == 0:
+
+        print("\nNo pure-strategy Nash equilibrium found.")
+
+    else:
+
+        print("\nPURE-STRATEGY NASH EQUILIBRIA")
+        print("-" * 75)
+
+        for eq in equilibria:
+
+            s1, s2, payoff1, payoff2 = eq
+
+            print(
+                f"\n{player1} → {s1}"
+            )
+
+            print(
+                f"{player2} → {s2}"
+            )
+
+            print(
+                f"Payoffs = ({payoff1:.4f}, {payoff2:.4f})"
+            )
+
+    # ========================================================
+    # SAVE RESULTS
+    # ========================================================
+
+    result_file = os.path.join(
+        pair_dir,
+        "bayesian_nash_equilibrium.txt"
+    )
+
+    with open(result_file, "w", encoding="utf-8") as f:
+
+        f.write(
+            "BAYESIAN NASH EQUILIBRIUM ANALYSIS\n"
         )
-    )
-)
 
-expected = pd.DataFrame(index=dry.index)
+        f.write("=" * 60 + "\n\n")
 
-# ---------------------------------------------------
-# Expected Payoff
-# ---------------------------------------------------
+        f.write(
+            f"Player 1: {player1}\n"
+        )
 
-for strategy in common_strategies:
+        f.write(
+            f"Player 2: {player2}\n\n"
+        )
 
-    expected[strategy] = (
-        P_DRY * dry[strategy] +
-        P_WET * wet[strategy]
-    )
+        if len(equilibria) == 0:
 
-expected = expected.round(4)
+            f.write(
+                "No pure-strategy Nash equilibrium found.\n"
+            )
 
-# ---------------------------------------------------
-# Optimal Strategy
-# ---------------------------------------------------
+        else:
 
-optimal = pd.DataFrame({
-    "OptimalStrategy":
-        expected.idxmax(axis=1),
-    "ExpectedPayoff":
-        expected.max(axis=1)
-})
+            f.write(
+                "PURE-STRATEGY NASH EQUILIBRIA\n\n"
+            )
 
-optimal = optimal.round(4)
+            for eq in equilibria:
 
-# ---------------------------------------------------
-# Save Outputs
-# ---------------------------------------------------
+                s1, s2, payoff1, payoff2 = eq
 
-expected.to_csv(
-    os.path.join(
-        OUTPUT_DIR,
-        "expected_payoffs.csv"
-    )
-)
+                f.write(
+                    f"{player1} → {s1}\n"
+                )
 
-optimal.to_csv(
-    os.path.join(
-        OUTPUT_DIR,
-        "optimal_strategy.csv"
-    )
-)
+                f.write(
+                    f"{player2} → {s2}\n"
+                )
 
-summary = os.path.join(
-    OUTPUT_DIR,
-    "bayesian_nash_summary.txt"
-)
+                f.write(
+                    f"Payoffs = "
+                    f"({payoff1:.4f}, {payoff2:.4f})\n\n"
+                )
 
-with open(summary, "w") as f:
 
-    f.write("BAYESIAN NASH EQUILIBRIUM\n\n")
+# ============================================================
+# FINISHED
+# ============================================================
 
-    f.write("Prior Probabilities\n")
-    f.write("---------------------\n")
-    f.write(priors.to_string())
-
-    f.write("\n\nExpected Payoffs\n")
-    f.write("---------------------\n")
-    f.write(expected.to_string())
-
-    f.write("\n\nOptimal Strategies\n")
-    f.write("---------------------\n")
-    f.write(optimal.to_string())
-
-# ---------------------------------------------------
-# Display
-# ---------------------------------------------------
-
-print("BAYESIAN NASH EQUILIBRIUM COMPUTED")
-
-print("\nExpected Payoffs")
-print(expected)
-
-print("\nOptimal Strategy")
-print(optimal)
-
-print("\nSaved to")
-print(OUTPUT_DIR)
+print("\n" + "=" * 75)
+print("BAYESIAN NASH EQUILIBRIUM ANALYSIS COMPLETED")
+print("=" * 75)
